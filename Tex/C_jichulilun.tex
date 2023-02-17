@@ -565,6 +565,39 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
     \end{equation}
     当 $\gamma<(1 / 2) \lambda_{\text {min }}(Q) /\|P\|_2$ 时，上式为正，运用Chetaev 定理（定理2.4）即可证明。
 \end{proof}
+最大Lyapunov指数是判断非线性时间序列是否为混沌系统的重要指标，混沌运动的基本特点是运动对初始条件的扰动极为敏感，
+两个靠近的初始值所产生的轨道，随时间推移按指数方式分离，Lyapunov指数就是用以描述这一现象的量。
+在一维动力系统 $x_{n+1}=F\left(x_{n}\right)$ 中， 初始两点迭代后互相分离或者靠昽，取决于导数
+$\left|\frac{d F}{d x}\right|$ 的值。若 $\left|\frac{d F}{d x}\right|>1$, 则两点分开；
+若$\left|\frac{d F}{d x}\right|<1$，则得两点靠拢。有时在迭代过程中，$\left|\frac{d F}{d x}\right|$ 
+的值也随之而变化, 呈现出时而分离时而靠笼的情况。为了从整体上看相邻两个状态，将对时间(或迭代次数)取平均。
+设平均每次迭代所引起的指数分离中的指数为 $\lambda$, 相距为 $\varepsilon$ 的两点经过 $n$ 次迭代后距离为
+\begin{equation}
+    \varepsilon e^{n \lambda\left(x_{0}\right)}=\left|F^{n}\left(x_{0}+\varepsilon\right)-F^{n}\left(x_{0}\right)\right|
+\end{equation}
+取$\varepsilon \rightarrow 0, n \rightarrow \infty$
+\begin{equation}
+    \lambda\left(x_{0}\right)=\lim _{n \rightarrow \infty} \lim _{\varepsilon \rightarrow 0}
+     \frac{1}{n} \ln \left|\frac{F^{n}\left(x_{0}+\varepsilon\right)-F^{n}\left(x_{0}\right)}
+     {\varepsilon}\right|=\lim _{n \rightarrow \infty} \frac{1}{n} \ln \left|\frac{d F^{n}(x)}{d x}
+     \right|_{x=x_{0}}
+\end{equation}
+可简化为
+\begin{equation}
+    \quad \lambda\left(x_{0}\right)=\lim _{n \rightarrow \infty} \frac{1}{n} \sum_{i=0}^{n-1} \ln \left|\frac{d F(x)}{d x}\right|_{x=x_{0}}
+\end{equation} 
+$\lambda$ 与初值的选取没有关系，称为原动力系统的Lyapunov指数，表示系统在多次迭代中平均每次迭代所引起的指数分离中的指数。
+若 $\lambda<0$，则意味着相邻点要靠拢合并成一点，这对应于稳定的不动点和周期运动；
+若 $\lambda>0$，则意味着相邻点要分离，对应于轨道的局部不稳定。
+对于 $n$ 维动力系统，设 $\mathrm{F}$ 为 $\mathbf{R}^{n} \rightarrow \mathbf{R}^{n}$ 上的 $n$ 维映射，
+设 $n$ 维离散动力系统: $x_{n+1}=\mathrm{F}\left(x_{n}\right)$ 。
+将系统的初始条件域取为一个无穷小的 $n$ 维小球，由于演化过程中球将变成椭球。
+将椭球上所有主轴按其长度顺序排列，第 $i$ 个Lyapunov指数为第 $i$ 个主轴的长度 $P_{i}(n)$ 的增加速率，其定义为
+\begin{equation}
+    \sigma_{i}=\lim _{n \rightarrow \infty} \frac{1}{n} \sum_{i=0}^{n-1} \ln \left|\frac{P_{i}(n)}{P_{i}(0)}\right|,(i=1,2, \cdots, n)
+\end{equation}
+对于系统是否存在动力学混沌，从最大 Lyapunov指数是否大于零非常直观的判断出来：一个正的Lyapunov指数，
+意味着系统相空间中，初始接近的两条轨线，其差别都会随着时间的演化而成指数率的增加以致达到无法预测，这就是混沌现象。
 
 \section{稀疏重构基本理论和算法}
 \subsection{稀疏重构基本理论}

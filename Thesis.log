@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  16 FEB 2023 16:29
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  17 FEB 2023 01:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1498,19 +1498,19 @@ Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:sc
 [11]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-[12] [13] [14] [15] [16] [17] [18]
+[12] [13] [14] [15] [16] [17] [18] [19]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-[19] [20]
+[20] [21]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-[21]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 [22]
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
+Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 [23]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-[24] [25] [26]
+[24]
+Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
+[25] [26] [27]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 File: Img//bp.png Graphic file (type bmp)
 <Img//bp.png>
@@ -1520,7 +1520,7 @@ File: Img//pda.png Graphic file (type bmp)
 <Img//pda.png>
 File: Img//omp.png Graphic file (type bmp)
 <Img//omp.png>
-[27] [28]
+[28] [29]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 File: Img//cosa.png Graphic file (type bmp)
 <Img//cosa.png>
@@ -1530,52 +1530,63 @@ File: Img//iht.png Graphic file (type bmp)
 <Img//iht.png>
 File: Img//htp.png Graphic file (type bmp)
 <Img//htp.png>
-[29] [30]) (./Tex/C_xiaoshijie.tex [31]
+[30] [31]) (./Tex/C_xiaoshijie.tex [32]
 第3章
-[32
+[33
 
 ]
 File: Img//31.png Graphic file (type bmp)
 <Img//31.png>
- [33] [34]
+ [34]
+Overfull \hbox (31.10413pt too wide) in paragraph at lines 54--56
+[]\TU/SongtiSC(0)/m/n/12.045 设 动 力 学 系 统 由 方 程 式 决 定\TU/entextsf/m/n/12.045 : $[] [] [][][][]$ \TU/SongtiSC(0)/m/n/12.045 并 考 虑 轨 道 相 邻 两 点 $[]$ 和 $[][] []$，|
+ []
+
+
+Overfull \hbox (13.90694pt too wide) in paragraph at lines 60--62
+\TU/SongtiSC(0)/m/n/12.045 对 于 重 构 相 空 间 中 的 某 一 点 $[][]$，|  与 $[][]$ 点 距 离 小 于 $[]$ 的 所 有 点 记 为 $[]$，|
+ []
+
+[35]
 File: Img//32.png Graphic file (type bmp)
 <Img//32.png>
- [35]
+ [36]
 File: Img//33.png Graphic file (type bmp)
 <Img//33.png>
+ [37]
 File: Img//34.png Graphic file (type bmp)
 <Img//34.png>
- [36] [37]
-Overfull \hbox (42.97676pt too wide) in paragraph at lines 169--172
+ [38]
+Overfull \hbox (42.97676pt too wide) in paragraph at lines 183--186
 \TU/SongtiSC(0)/m/n/12.045 不 妨 假 设 \TU/entextsf/m/n/12.045 Laplacian \TU/SongtiSC(0)/m/n/12.045 矩 阵 可 对 角 化 \TU/entextsf/m/n/12.045 (\TU/SongtiSC(0)/m/n/12.045 即 为 无 向 图 情 况\TU/entextsf/m/n/12.045 )), $[][] [] [][][][][] [] [] [] []$,
  []
 
-[38]
+[39]
 File: Img//tb1.png Graphic file (type bmp)
 <Img//tb1.png>
- [39]
+ [40] [41]
 File: Img//tb2.png Graphic file (type bmp)
 <Img//tb2.png>
 File: Img//tb3.png Graphic file (type bmp)
 <Img//tb3.png>
- [40] [41]) (./Tex/C_xishuchonggou.tex [42]
+) (./Tex/C_xishuchonggou.tex [42] [43]
 第4章
 File: Img//41.png Graphic file (type bmp)
 <Img//41.png>
-[43
+[44
 
 ]
 File: Img//42.png Graphic file (type bmp)
 <Img//42.png>
 File: Img//43.png Graphic file (type bmp)
 <Img//43.png>
- [44]) (./Tex/C_jielun.tex [45]
+ [45]) (./Tex/C_jielun.tex [46]
 第5章
-)) [46
+)) [47
 
 ]
 No file Thesis.bbl.
-(./Tex/Backmatter.tex [47
+(./Tex/Backmatter.tex [48
 
 
 
@@ -1587,10 +1598,10 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  38726 strings out of 475856
  799956 string characters out of 5801792
- 1217946 words of memory out of 5000000
+ 1222945 words of memory out of 5000000
  59087 multiletter control sequences out of 15000+600000
  478728 words of font info for 136 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  118i,14n,130p,1257b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (56 pages).
+Output written on Thesis.pdf (57 pages).
