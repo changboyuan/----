@@ -1085,4 +1085,72 @@ $A x=\sum_{j=1}^N x_j a_j$的$m$个元不可能全部非零。\par
     \includegraphics[width=\textwidth]{htp.png}
 \end{figure}
 \section{复杂网络的同步}
+本节内容来探讨复杂网络中一个重要性质，网络中不同节点的同步性，在一些条件下，原本不协调的各个节点
+会彼此同步，首先需要一个衡量同步性的指标。考虑如下动力方程
+\begin{equation}
+    \dot{x}_i=f\left(x_i\right)+c \sum_{j=1}^N a_{i j}\left(H\left(x_j\right)-H\left(x_i\right)\right), \quad i=1,2, \ldots, N
+\end{equation}
+其中$x_i$与$H(x_i)$分别是节点$i$的状态与输出，$c$为耦合强度，$A$为网络模型的邻接矩阵。记
+\begin{equation}
+    l_{i j}=-a_{i j}(i \neq j), \quad l_{i i}=\sum_{j=1}^N a_{i j}
+\end{equation}
+则动力学方程改写为
+\begin{equation}
+    \dot{x}_i=f\left(x_i\right)-c \sum_{j=1}^N l_{i j} H\left(x_j\right)
+\end{equation}
+记$L=l-{ij}$，称为该网络的Laplacian矩阵，其每行的元素之和为0，即
+\begin{equation}
+    \sum_{j=1}^N l_{i j}=0
+\end{equation}
+记矩阵$L$的特征根为
+\begin{equation}
+    0=\lambda_1<\lambda_2 \leqslant \lambda_3 \leqslant \cdots \leqslant \lambda_N
+\end{equation}
+那么有
+\begin{equation}
+    \lambda_2 \leqslant \frac{N}{N-1} k_{\min } \leqslant \frac{N}{N-1} k_{\max } \leqslant \lambda_N \leqslant 2 k_{\max }
+\end{equation}
+如果$t \longrightarrow \infty$时，有
+\begin{equation}
+    x_i(t)-x_j(t) \rightarrow 0, \quad i, j=1,2, \ldots, N
+\end{equation}
+则称网络是完全同步的，若有$s(t)$使得
+\begin{equation}
+    x_i(t) \rightarrow s(t), \quad i=1,2, \ldots, N
+\end{equation}
+则称网络的所有节点同步于$s(t)$，称$s(t)$为同步状态。将状态方程运用$s(t)$线性化，令$\xi_i$为该节点的度，$i$的变分，有
+\begin{equation}
+    \dot{\xi}_i=\boldsymbol{D} \boldsymbol{f}(s) \xi_i-\sum_{j=1}^N c l_{i j} \boldsymbol{D} \boldsymbol{H}(s) \xi_j
+\end{equation}
+这里 $\boldsymbol{D} \boldsymbol{f}(s)$ 和 $\boldsymbol{D} \boldsymbol{H}(s)$ 分别是 $f(s)$ 和 $H(s)$ 关于 $s$ 的 Jacobi 矩阵，
+再令 $\boldsymbol{\xi}=\left[\xi_1, \ldots\right.$, $\left.\xi_N\right]$，则上式可以写为
+\begin{equation}
+    \dot{\xi}=\boldsymbol{D} \boldsymbol{f}(s) \boldsymbol{\xi}-c \boldsymbol{D} \boldsymbol{H}(s) \boldsymbol{\xi} \boldsymbol{L}^{\mathrm{T}}
+\end{equation}
+记 $\boldsymbol{L}^{\mathrm{T}}=\boldsymbol{U} \boldsymbol{\Lambda} \boldsymbol{U}^{-1}$ 为矩阵的对角分解，
+$\boldsymbol{\Lambda}=\operatorname{diag}\left(\lambda_1, \ldots, \lambda_N\right)$。 
+再令 $\boldsymbol{\eta}=\left[\boldsymbol{\eta}_1\right.$, $\left.\ldots, \eta_N\right]=\boldsymbol{\xi U}$， 则有
+\begin{equation}
+    \dot{\boldsymbol{\eta}}=\boldsymbol{D} \boldsymbol{f}(s) \boldsymbol{\eta}-c \boldsymbol{D} \boldsymbol{H}(s) \boldsymbol{\eta} \mathbf{\Lambda}
+\end{equation}
+上式等价于
+\begin{equation}
+    \begin{gathered}
+    \dot{\eta}_1=\boldsymbol{D} \boldsymbol{f}(s) \eta_1, \\
+    \dot{\eta}_k=\left[\boldsymbol{D} \boldsymbol{f}(s)-c \lambda_k \boldsymbol{D} \boldsymbol{H}(s)\right] \eta_k, \quad k=2, \ldots, N
+    \end{gathered}
+\end{equation}
+定义主稳定方程
+\begin{equation}
+    \dot{y}=[\boldsymbol{D} \boldsymbol{f}(s)-\alpha \boldsymbol{D} \boldsymbol{H}(s)] \boldsymbol{y}
+\end{equation}
+该方程的最大 Lyapunov 指数 $L_{\max }$ 是关于实变量 $\alpha$ 的函数，称为网络系统的主稳定函数。
+把使得主稳定函数 $L_{\max }$ 为负的实数 $\alpha$ 的取值范围 $S$ 称为网络系统的同步化区域，它是由孤立节点的动力学函数 $f(\cdot)$ 和输出函数
+$H(\cdot)$ 确定的。如果耦合强度与 Laplacian 矩阵的每个非零特征值之积都属于同步化区域，即
+\begin{equation}
+    c \lambda_k \subseteq S, \quad k=2, \ldots, N
+\end{equation}
+那么同步流形是渐近稳定的。
+
+
 \section{小结}

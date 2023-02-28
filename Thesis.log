@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  27 FEB 2023 15:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  28 FEB 2023 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1442,32 +1442,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.045pt
 (hyperref)                replaced by space on input line 63.
 
-(./Thesis.toc)
+(./Thesis.toc [3
+
+
+])
 \tf@toc=\write5
 \openout5 = `Thesis.toc'.
 
- [3
-
-
-] (./Thesis.lof)
+ [4] (./Thesis.lof)
 \tf@lof=\write6
 \openout6 = `Thesis.lof'.
 
- [4
+ [5
 
 
-] (./Thesis.lot)
-\tf@lot=\write7
-\openout7 = `Thesis.lot'.
-
- (./Tex/Prematter.tex [5
-
-
-] [6
-
-]) [7] (./Tex/Mainmatter.tex (./Tex/C_xulun.tex
+] (./Tex/Mainmatter.tex (./Tex/C_xulun.tex
 第1章
 [1
+
 
 
 ] [2] [3] [4]) (./Tex/C_jichulilun.tex [5]
@@ -1537,7 +1529,7 @@ File: Img//iht.png Graphic file (type bmp)
 <Img//iht.png>
 File: Img//htp.png Graphic file (type bmp)
 <Img//htp.png>
- [33] [34]) (./Tex/C_xiaoshijie.tex [35]
+ [33] [34] [35]) (./Tex/C_xiaoshijie.tex [36]
 第3章
 File: Img//duffingtime.png Graphic file (type bmp)
 <Img//duffingtime.png>
@@ -1549,83 +1541,83 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 43.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 43.
-[36
+[37
 
 ]
 File: Img//duffingphase.png Graphic file (type bmp)
 <Img//duffingphase.png>
 File: Img//30.png Graphic file (type bmp)
 <Img//30.png>
- [37] [38]
+ [38] [39]
 File: Img//WStop.png Graphic file (type bmp)
 <Img//WStop.png>
- [39]
+ [40]
 File: Img//31.png Graphic file (type bmp)
 <Img//31.png>
- [40] [41]
+ [41] [42]
 File: Img//k2.png Graphic file (type bmp)
 <Img//k2.png>
- [42]
+ [43]
 File: Img//k20.png Graphic file (type bmp)
 <Img//k20.png>
- [43]
+ [44]
 File: Img//k48.png Graphic file (type bmp)
 <Img//k48.png>
 File: Img//pa.png Graphic file (type bmp)
 <Img//pa.png>
- [44]
+ [45]
 File: Img//pb.png Graphic file (type bmp)
 <Img//pb.png>
- [45]
+ [46]
 File: Img//pc.png Graphic file (type bmp)
 <Img//pc.png>
 File: Img//34.png Graphic file (type bmp)
 <Img//34.png>
- [46] [47]
+ [47] [48]
 Overfull \hbox (42.97676pt too wide) in paragraph at lines 270--273
 \TU/SongtiSC(0)/m/n/12.045 不 妨 假 设 \TU/entextsf/m/n/12.045 Laplacian \TU/SongtiSC(0)/m/n/12.045 矩 阵 可 对 角 化 \TU/entextsf/m/n/12.045 (\TU/SongtiSC(0)/m/n/12.045 即 为 无 向 图 情 况\TU/entextsf/m/n/12.045 )), $[][] [] [][][][][] [] [] [] []$,
  []
 
-[48]
+[49]
 File: Img//tb1.png Graphic file (type bmp)
 <Img//tb1.png>
- [49]
+ [50]
 File: Img//tb2.png Graphic file (type bmp)
 <Img//tb2.png>
 File: Img//tb3.png Graphic file (type bmp)
 <Img//tb3.png>
- [50]) (./Tex/C_xishuchonggou.tex [51]
+ [51]) (./Tex/C_xishuchonggou.tex [52]
 第4章
-[52
+[53
 
 ]
 File: Img//42.png Graphic file (type bmp)
 <Img//42.png>
- [53]
+ [54]
 File: Img//43.png Graphic file (type bmp)
 <Img//43.png>
-) (./Tex/C_jielun.tex [54]
+) (./Tex/C_jielun.tex [55]
 第5章
-)) [55
+)) [56
 
 ]
 No file Thesis.bbl.
-(./Tex/Backmatter.tex [56
+(./Tex/Backmatter.tex [57
 
 
 
 
 ]) (./Thesis.aux)
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CD875D7B33974B8A4E095B7E00B9CDF0;5031.
+(rerunfilecheck)             Checksum: 3CE642EA62224F4FCF9B509E2710B75A;5087.
  ) 
 Here is how much of TeX's memory you used:
- 38924 strings out of 475856
- 808608 string characters out of 5801792
- 1222971 words of memory out of 5000000
- 59260 multiletter control sequences out of 15000+600000
+ 38912 strings out of 475856
+ 808428 string characters out of 5801792
+ 1224018 words of memory out of 5000000
+ 59254 multiletter control sequences out of 15000+600000
  480499 words of font info for 157 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  118i,14n,130p,1257b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (65 pages).
+Output written on Thesis.pdf (64 pages).
