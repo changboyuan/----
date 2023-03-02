@@ -40,12 +40,14 @@ div V = \frac{\partial y}{\partial x}+\frac{\partial(a x-b x^{3}-\gamma y)}{\par
 图 *给出了当$A$取不同值时 Duffing 方程输出响应的时域图，图*则给出了其输出的相图，展示了Duffing 振子从吸引子状态，再通过倍周期分岔走向混沌的过程。
  \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{duffingtime.png}\caption{不同周期振幅$A$取值时，Duffing 方程输出时域图}
+    \includegraphics[width=0.7\textwidth]{duffingtime.png}
+    \caption{不同周期振幅$A$取值时，Duffing 方程输出时域图}
  \end{figure}
 
  \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{duffingphase.png}\caption{不同周期振幅$A$取值时，Duffing 方程输出相图}
+    \includegraphics[width=0.7\textwidth]{duffingphase.png}
+    \caption{不同周期振幅$A$取值时，Duffing 方程输出相图}
  \end{figure}
 
 所谓分岔是指对于含参数的系统，当参数变动并经过某些临界值时，系统的定态性质
@@ -54,7 +56,7 @@ div V = \frac{\partial y}{\partial x}+\frac{\partial(a x-b x^{3}-\gamma y)}{\par
 也可以看到随着周期驱动幅度$A$的变化，Duffing 方程从吸引子走向混沌、大周期运动的过程。
  \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{30.png}\caption{Duffing 方程随周期振幅$A$变化的分叉图}
+    \includegraphics[width=0.5\textwidth]{30.png}\caption{Duffing 方程随周期振幅$A$变化的分叉图}
  \end{figure}
 
 
@@ -107,6 +109,7 @@ $\left(a_{ij}\right)_{N\times N}$为网络的邻接矩阵。一般的，对于�
  \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{31.png}
+    \caption{分叉图演示}
  \end{figure}
 \subsection{基于最大李雅普诺夫指数的混沌动力学分析}
 从3.1节可以看出，通过分岔图并不容易定量分析复杂系统的混沌行为，而对耦合系统混沌进行分析的另外一个指标为系统的最大Lyapunov指数
@@ -170,7 +173,8 @@ $\varepsilon$ 具有鲁棒性。同样, 在图(c)中 $K=48$, 可以看到, 随�
 $K$ 较大时 $\varepsilon$ 的增强对混沌区域影响不明显。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{k2.png}
+    \includegraphics[width=0.45\textwidth]{k2.png}
+    \caption{$K=2$时耦合强度对混沌的影响}
 \end{figure}
 在图(a)中 $K=2$, 当耦合强度 $\varepsilon$ 较小时 (如 $\varepsilon=0,0.2,0.4)$, 随着 $\varepsilon$ 的增大,
 LE 指数大于 0 的混沌区域扩大; 当耦合强度 $\varepsilon$ 较大时 (如 $\varepsilon=$ $0.6,0.8,1,2)$,
@@ -179,7 +183,8 @@ LE 指数大于 0 的混沌区域扩大; 当耦合强度 $\varepsilon$ 较大时
 更大的耦合强度使得系统协同性增强, 才能抑制系统的混沌运动。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{k20.png}
+    \includegraphics[width=0.5\textwidth]{k20.png}
+    \caption{$K=20$时耦合强度对混沌的影响}
 \end{figure}
 
 在图(b)中 $K=20$, 可以看到, 当 $\varepsilon=0$ 时, 小世界网络退化成独立的 $N$ 个 Duffing系统, 此时混沌区域最大,
@@ -188,7 +193,8 @@ LE 指数大于 0 的混沌区域扩大; 当耦合强度 $\varepsilon$ 较大时
 $\varepsilon$ 具有鲁棒性。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{k48.png}
+    \includegraphics[width=0.45\textwidth]{k48.png}
+    \caption{$K=48$时耦合强度对混沌的影响}
 \end{figure}
 同样, 在图(c)中 $K=48$, 可以看到, 随着 $\varepsilon$ 增加, 混沌区域的变化同样不明显。
 综上可以看到, 和传统的规则网络不同, 本文所提 Duffing-WS 型小世界网络的耦合强度 $\varepsilon$
@@ -201,6 +207,7 @@ $K$ 较大时 $\varepsilon$ 的增强对混沌区域影响不明显。
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{pa.png}
+    \caption{$p=0$时连接度对混沌的影响}
 \end{figure}
 可以看出, 在图(a)中 $p=0$, 耦合网络为规则的最近邻耦合 网络, 当重连度 $K$ 较小时 $(K=2,4,6,8,10)$,
 随着重连度 $K$ 的增加, LE 指数大于 0 的混沌区域先扩大再收缩, 当 $K=4$ 时混沌区域达到最大; 随后,
@@ -208,7 +215,8 @@ $K$ 较大时 $\varepsilon$ 的增强对混沌区域影响不明显。
 但总体上差异不大。这说明对于规则网络, 只有足够大的重连度才会抑制 系统混沌, 较小的重连度反而增加系统的混沌运动。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{pb.png}
+    \includegraphics[width=0.45\textwidth]{pb.png}
+    \caption{$p=0.5$时连接度对混沌的影响}
 \end{figure}
 在图(b)中 $p=0.5$, 此时网络为标准的小世界模型。 $K=2$ 与$K$ 值 LE 曲线 有显著不同, 所对应的混沌区域最大,
 LE 指数在各个振幅处的值都最高, 可见 重连度 $K$ 较低时更容易产生较大的混沌范围。 $K=4,6$ 比起 $K=2$ 的 LE 曲线, 其
@@ -216,7 +224,8 @@ LE 指数在各个振幅处的值都最高, 可见 重连度 $K$ 较低时更容
 这是因为当重连度足够高时, 系统各节 点输出间差异很小, 混沌区域几乎一致。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{pc.png}
+    \includegraphics[width=0.43\textwidth]{pc.png}
+    \caption{$p=1$时连接度对混沌的影响}
 \end{figure}
 在图 (c)中 $p=1$, 此时网络为完全的随机网络。可以看出, $K$ 足够大时 LE 曲线的一致性会被打破,
 重连度对混沌区域的控制不再呈现明显的规律。当 $K=2$ 时混沌区域反而最小, 而中间大小的重连度 $(K=4,6,8,10)$ 混沌区域却最大。
@@ -231,6 +240,7 @@ LE 指数在各个振幅处的值都最高, 可见 重连度 $K$ 较低时更容
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{34.png}
+    \caption{重连概率对混沌的影响}
 \end{figure}
 \subsection{同步性分析}
 事实上，大量耦合粒子的同步化问题最早由1998年给出的基于变分方程的主稳定函数方法而得到妥善地解决[*]。下面我们仍然基于变分法给出本章所提Duffing-WS小世界网络(*)的主稳定函数，并由此分析Duffing-WS小世界网络的同步性。
@@ -305,7 +315,7 @@ L E(\alpha)=\lim _{T \rightarrow+\infty}
 其中黑色区域为最大Lyapunov指数非负即不同步的区域。同样，我们按照不同初始值取了50次平均得到最后的结果。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{tb1.png}
+    \includegraphics[width=0.6\textwidth]{tb1.png}
 \end{figure}
 分析图(*)，我们可以得出如下结论：
 
@@ -342,7 +352,8 @@ $\lambda_2$ 的大小可以作为衡量网络同步化能力的指标, $\lambda_
     \includegraphics[width=\textwidth]{tb2.png}
 \end{figure}
 下图则给出了粒子个数为 $\mathrm{N}=20,100$ 时, Duffing-WS小世界网络 Laplacian 矩阵的最大特征值 $\lambda_N$在不同的 $\mathrm{K}$ 值下随重连概率 $\mathrm{p}$
-变化的曲线(平均 100次)。
+变化的曲线(平均 100次)。可以看出，在$N=20$时，最大特征值随着重连概率的增加而增大，连接度越大则最大特征值越大。在$N=100$时
+，连接度小于40时随着重连概率的增大最大特征值增大，但是在连接度为40时发生突变，形成先下降后增加的趋势，随后变化不明显。
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{tb3.png}

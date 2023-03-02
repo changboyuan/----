@@ -40,6 +40,7 @@ Duffing-WS小世界网络第一个节点的输出，并叠加一定强度的高�
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{42.png}
+    \caption{OMP和CoSaMP两种算法的去噪能力}
 \end{figure}
 图（*）给出了OMP和CoSaMP两种算法的重构误差关于噪声强度的变化图，其中重构误差定义为重构输出信号和真实信号差的$l_2$范数。可以看到，CoSaMP算法在噪声强度小于0.2时具有非常低的重构误差，
 即较好的抗噪重构性能，但之后因噪声强度的增加其误差有快速增长，但其重构性能始终优于经典的OMP算法。
@@ -47,6 +48,7 @@ Duffing-WS小世界网络第一个节点的输出，并叠加一定强度的高�
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{43.png}
+    \caption{OMP和CoSaMP两种算法的重构误差}
 \end{figure}
 
 图（*）则给出了选择不同稀疏度$K$值时，OMP和CoSaMP两种算法相应的重构误差。可以看出，CoSaMP算法在稀疏度增加时重构误差显著减小，

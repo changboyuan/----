@@ -19,7 +19,7 @@
 称在 $G$ 中 $X$ 分离 (separate) 集合 $A$ 和 $B$ 。
 下面是图论中一个重要的定理
 \begin{theorem}
-    设 $G=(V，E)$ 是一个图且 $A，B \subseteq V$ 。那么，在$G$ 中分离 $A$ 和 $B$ 的顶点的最小数目等于 $G$ 中互不
+    设 $G=(V,E)$ 是一个图且 $A，B \subseteq V$ 。那么，在$G$ 中分离 $A$ 和 $B$ 的顶点的最小数目等于 $G$ 中互不
     相交的 $A-B$ 路的最大数目。
 \end{theorem}
 \begin{proof}
@@ -129,12 +129,14 @@ WS小世界模型是通过在规则图上做带有随机性的更改形成的。
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{wsp.png}
+    \caption{WS随机网络的构造}
 \end{figure}
 可以看出，$p=0$时是完全规则的网络，$p=1$时是完全随机的网络。WS模型的聚类系数与平均路径长度时关于重连概率$p$的函数
 其关系如图
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{WS.png}
+    \caption{WS随机网络的聚类系数与重连概率}
 \end{figure}
 WS模型的聚类系数的估计如下
 \begin{equation}
@@ -225,6 +227,7 @@ $f(x)$被称为普适标度函数，NW模型的平均路径长度有如下近似
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{NW1.png}
+    \caption{NW随机网络的平均路径长度}
 \end{figure}
 下面讨论度分布，由于每对节点之间有边相连的概率为 $Kp/(N-1)$，因此
 \begin{equation}

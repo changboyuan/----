@@ -1,10 +1,23 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces WS随机网络的构造\relax }}{9}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces WS随机网络的聚类系数与重连概率\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces NW随机网络的平均路径长度\relax }}{12}{figure.caption.15}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出时域图\relax }}{38}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出相图\relax }}{39}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing 方程随周期振幅$A$变化的分叉图\relax }}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出时域图\relax }}{39}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出相图\relax }}{40}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing 方程随周期振幅$A$变化的分叉图\relax }}{40}{figure.caption.25}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing-WS型小世界网络的连接拓扑结构图\relax }}{41}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 分叉图演示\relax }}{43}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces $K=2$时耦合强度对混沌的影响\relax }}{45}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces $K=20$时耦合强度对混沌的影响\relax }}{45}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces $K=48$时耦合强度对混沌的影响\relax }}{46}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces $p=0$时连接度对混沌的影响\relax }}{47}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces $p=0.5$时连接度对混沌的影响\relax }}{47}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces $p=1$时连接度对混沌的影响\relax }}{48}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 重连概率对混沌的影响\relax }}{49}{figure.caption.37}%
 \addvspace {10.0pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces OMP和CoSaMP两种算法的去噪能力\relax }}{55}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces OMP和CoSaMP两种算法的重构误差\relax }}{56}{figure.caption.42}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}

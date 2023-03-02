@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  28 FEB 2023 23:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  2 MAR 2023 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1467,7 +1467,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 [6
 
 ] [7]
@@ -1477,8 +1476,9 @@ File: Img//wsp.png Graphic file (type bmp)
 <Img//wsp.png>
 File: Img//WS.png Graphic file (type bmp)
 <Img//WS.png>
- [9]
+
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
+[9]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
@@ -1488,26 +1488,26 @@ File: Img//NW1.png Graphic file (type bmp)
  [12]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (31.10413pt too wide) in paragraph at lines 604--606
+Overfull \hbox (31.10413pt too wide) in paragraph at lines 607--609
 []\TU/SongtiSC(0)/m/n/12.045 设 动 力 学 系 统 由 方 程 式 决 定\TU/entextsf/m/n/12.045 : $[] [] [][][][]$ \TU/SongtiSC(0)/m/n/12.045 并 考 虑 轨 道 相 邻 两 点 $[]$ 和 $[][] []$，|
  []
 
 
-Overfull \hbox (13.90694pt too wide) in paragraph at lines 610--612
+Overfull \hbox (13.90694pt too wide) in paragraph at lines 613--615
 \TU/SongtiSC(0)/m/n/12.045 对 于 重 构 相 空 间 中 的 某 一 点 $[][]$，|  与 $[][]$ 点 距 离 小 于 $[]$ 的 所 有 点 记 为 $[]$，|
  []
 
-[21] [22] [23]
+[21] [22] [23] [24]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-[24]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 [25]
+Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
+[26]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-[26] [27]
+[27]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
-[28] [29]
+[28] [29] [30]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 File: Img//bp.png Graphic file (type bmp)
 <Img//bp.png>
@@ -1515,94 +1515,92 @@ Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:sc
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
 File: Img//pda.png Graphic file (type bmp)
 <Img//pda.png>
-[30]
 File: Img//omp.png Graphic file (type bmp)
 <Img//omp.png>
- [31]
+[31] [32]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 File: Img//cosa.png Graphic file (type bmp)
 <Img//cosa.png>
-[32]
 File: Img//bt.png Graphic file (type bmp)
 <Img//bt.png>
 File: Img//iht.png Graphic file (type bmp)
 <Img//iht.png>
 File: Img//htp.png Graphic file (type bmp)
 <Img//htp.png>
- [33] [34] [35]) (./Tex/C_xiaoshijie.tex [36]
+[33] [34] [35] [36]) (./Tex/C_xiaoshijie.tex [37]
 第3章
 File: Img//duffingtime.png Graphic file (type bmp)
 <Img//duffingtime.png>
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 43.
+(Font)              scaled to size 7.00075pt on input line 44.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 43.
+(Font)              scaled to size 5.00053pt on input line 44.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 43.
+(Font)              scaled to size 6.99925pt on input line 44.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 43.
-[37
+(Font)              scaled to size 4.99947pt on input line 44.
+[38
 
 ]
 File: Img//duffingphase.png Graphic file (type bmp)
 <Img//duffingphase.png>
 File: Img//30.png Graphic file (type bmp)
 <Img//30.png>
- [38] [39]
+ [39] [40]
 File: Img//WStop.png Graphic file (type bmp)
 <Img//WStop.png>
- [40]
+ [41]
 File: Img//31.png Graphic file (type bmp)
 <Img//31.png>
- [41] [42]
+ [42] [43]
 File: Img//k2.png Graphic file (type bmp)
 <Img//k2.png>
- [43]
+ [44]
 File: Img//k20.png Graphic file (type bmp)
 <Img//k20.png>
- [44]
+ [45]
 File: Img//k48.png Graphic file (type bmp)
 <Img//k48.png>
 File: Img//pa.png Graphic file (type bmp)
 <Img//pa.png>
- [45]
+ [46]
 File: Img//pb.png Graphic file (type bmp)
 <Img//pb.png>
- [46]
+ [47]
 File: Img//pc.png Graphic file (type bmp)
 <Img//pc.png>
 File: Img//34.png Graphic file (type bmp)
 <Img//34.png>
- [47] [48]
-Overfull \hbox (42.97676pt too wide) in paragraph at lines 270--273
+ [48] [49]
+Overfull \hbox (42.97676pt too wide) in paragraph at lines 280--283
 \TU/SongtiSC(0)/m/n/12.045 不 妨 假 设 \TU/entextsf/m/n/12.045 Laplacian \TU/SongtiSC(0)/m/n/12.045 矩 阵 可 对 角 化 \TU/entextsf/m/n/12.045 (\TU/SongtiSC(0)/m/n/12.045 即 为 无 向 图 情 况\TU/entextsf/m/n/12.045 )), $[][] [] [][][][][] [] [] [] []$,
  []
 
-[49]
+[50]
 File: Img//tb1.png Graphic file (type bmp)
 <Img//tb1.png>
- [50]
+ [51]
 File: Img//tb2.png Graphic file (type bmp)
 <Img//tb2.png>
 File: Img//tb3.png Graphic file (type bmp)
 <Img//tb3.png>
- [51]) (./Tex/C_xishuchonggou.tex [52]
+ [52]) (./Tex/C_xishuchonggou.tex [53]
 第4章
-[53
+[54
 
 ]
 File: Img//42.png Graphic file (type bmp)
 <Img//42.png>
- [54]
+ [55]
 File: Img//43.png Graphic file (type bmp)
 <Img//43.png>
-) (./Tex/C_jielun.tex [55]
+) (./Tex/C_jielun.tex [56] [57]
 第5章
-)) [56
+)) [58
 
 ]
 No file Thesis.bbl.
-(./Tex/Backmatter.tex [57
+(./Tex/Backmatter.tex [59
 
 
 
@@ -1620,4 +1618,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  118i,14n,130p,1257b,2933s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Thesis.pdf (64 pages).
+Output written on Thesis.pdf (66 pages).
