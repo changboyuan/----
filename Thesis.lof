@@ -16,6 +16,9 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces $p=0.5$时连接度对混沌的影响\relax }}{47}{figure.caption.34}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces $p=1$时连接度对混沌的影响\relax }}{48}{figure.caption.35}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces 重连概率对混沌的影响\relax }}{49}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 不同类型网络混沌的振幅范围\relax }}{51}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 第二大特征值与重连概率的关系\relax }}{52}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces 最大特征值与重连概率的关系\relax }}{53}{figure.caption.40}%
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces OMP和CoSaMP两种算法的去噪能力\relax }}{55}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces OMP和CoSaMP两种算法的重构误差\relax }}{56}{figure.caption.42}%

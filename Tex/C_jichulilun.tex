@@ -58,8 +58,8 @@
 复杂网络是指不规则、度分布不均匀的网络模型，生成复杂网络的做法是在规则网络上做具有一定随机性的更改。本节内容会给出
 几种常见的复杂网络模型与其性质。
 \subsubsection*{ER随机图}
-ER随机图是通过给顶点随机连边，这是随机性最强的图。\par
-\noindent 具有固定边数的ER 随机图 $G(N,M)$ 构造算法\par
+随机网络的生成方式有很多种，ER随机图是随机网络模型中最经典的一种，其顶点采用完全随机连边的方式进行连接，它是一种完全随机图
+，是随机性最强的图。下面我们给出具有固定边数的ER随机图$G(N,M)$的构造算法：\par 
 \noindent(1) 初始化: 给定 $N$ 个节点和待添加的边数 $M$ 。\par
 \noindent(2) 随机连边:\par
 【1】 随机选取一对没有边相连的不同的节点，并在这对节点之间添加一 条边。\par
@@ -731,11 +731,11 @@ $A x=\sum_{j=1}^N x_j a_j$的$m$个元不可能全部非零。\par
 \begin{theorem}
     $\forall q>p>0,\forall x\in \mathbb{R}^N$，有不等式
     \begin{equation}
-        \sigma_k(x)_q \leq \frac{c_{p，q}}{k^{1 / p-1 / q}}\|x\|_p
+        \sigma_k(x)_q \leq \frac{c_{p,q}}{k^{1 / p-1 / q}}\|x\|_p
     \end{equation}
     其中
     \begin{equation}
-        c_{p，q}:=\left[\left(\frac{p}{q}\right)^{p / q}\left(1-\frac{p}{q}\right)^{1-p / q}\right]^{1 / p} \leq 1
+        c_{p,q}:=\left[\left(\frac{p}{q}\right)^{p / q}\left(1-\frac{p}{q}\right)^{1-p / q}\right]^{1 / p} \leq 1
     \end{equation}
 \end{theorem}
 还有一种手段来说明向量的可压缩程度，如果向量中有大量的小数值元素（非零），仅有少部分重要的元素。即
@@ -782,7 +782,7 @@ $A x=\sum_{j=1}^N x_j a_j$的$m$个元不可能全部非零。\par
 \begin{theorem}
     $\forall q>p>0,\forall x\in \mathbb{R}^N$，有不等式
     \begin{equation}
-        \sigma_k(x)_q \leq \frac{d_{p，q}}{k^{1 / p-1 / q}}\|x\|_{p,\infty}
+        \sigma_k(x)_q \leq \frac{d_{p,q}}{k^{1 / p-1 / q}}\|x\|_{p,\infty}
     \end{equation}
     其中
     \begin{equation}
@@ -1043,7 +1043,7 @@ $A x=\sum_{j=1}^N x_j a_j$的$m$个元不可能全部非零。\par
 \begin{equation}
     \begin{aligned}
     \left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2 & =\left\|\mathbf{y}-\mathbf{A v}-t \mathbf{A} \mathbf{e}_j\right\|_2^2 \\
-    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+|t|^2\left\|\mathbf{A} \mathbf{e}_j\right\|_2^2-2 \operatorname{Re}\left(\bar{t}\left\langle\mathbf{y}-\mathbf{A v}，\mathbf{A} \mathbf{e}_j\right\rangle\right) \\
+    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+|t|^2\left\|\mathbf{A} \mathbf{e}_j\right\|_2^2-2 \operatorname{Re}\left(\bar{t}\left\langle\mathbf{y}-\mathbf{A v},\mathbf{A} \mathbf{e}_j\right\rangle\right) \\
     & =\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \operatorname{Re}\left(\rho e^{-i \theta}\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A v})\right)_j\right) \\
     & \geq\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \rho\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{v})\right)_j\right|
     \end{aligned}

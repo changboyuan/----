@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  2 MAR 2023 23:40
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  3 MAR 2023 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1499,11 +1499,7 @@ Overfull \hbox (13.90694pt too wide) in paragraph at lines 613--615
 
 [21] [22] [23] [24]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-[25]
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;+ssty=0;mapping=tex-text;!
-[26]
+[25] [26]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 [27]
 Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
@@ -1518,7 +1514,6 @@ File: Img//pda.png Graphic file (type bmp)
 File: Img//omp.png Graphic file (type bmp)
 <Img//omp.png>
 [31] [32]
-Missing character: There is no ， (U+FF0C) in font [XITSMath-Regular.otf]/OT:script=math;language=dflt;+ss01;mapping=tex-text;!
 File: Img//cosa.png Graphic file (type bmp)
 <Img//cosa.png>
 File: Img//bt.png Graphic file (type bmp)
@@ -1527,7 +1522,7 @@ File: Img//iht.png Graphic file (type bmp)
 <Img//iht.png>
 File: Img//htp.png Graphic file (type bmp)
 <Img//htp.png>
-[33] [34] [35] [36]) (./Tex/C_xiaoshijie.tex [37]
+ [33] [34] [35] [36]) (./Tex/C_xiaoshijie.tex [37]
 第3章
 File: Img//duffingtime.png Graphic file (type bmp)
 <Img//duffingtime.png>
