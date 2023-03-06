@@ -1,5 +1,5 @@
 \chapter{基础理论}
-\section{复杂网络和混沌基本理论}
+\section{复杂网络基本概念}
 21世纪是复杂性和网络化的世纪。从20世纪七八十年代开始，在国际上形成了非线性科学和复杂性问题的研究热潮。尤其是20世纪90年代以来，
 人类已经生活在一个充满各种各样复杂网络的世界中，许多复杂性问题都可以从复杂网络的角度去研究。
 随着以互联网为代表的网络信息技术的迅速发展,人类社会已经迈入了复杂网络时代。人类的生活与生产活动越来越多地依赖于各种复杂网络系统安全可靠和有效的运行。
@@ -38,7 +38,7 @@ V中的元素称为节点或顶点（node或vertex）， E中的元素称为边�
 \end{definition}
 给定子图 $A,B \subseteq V$ 和 $X \subseteq V \cup E$，如果 $G$ 的每条 $A-B$ 路均包含 $X$ 中的一个顶点或一条边,
 称在 $G$ 中 $X$ 分离 (separate) 集合 $A$ 和 $B$ 。
-下面是图论中一个重要的定理
+下面是图论中一个重要的定理。
 \begin{theorem}
     设 $G=(V,E)$ 是一个图且 $A,B \subseteq V$ 。那么，在$G$ 中分离 $A$ 和 $B$ 的顶点的最小数目等于 $G$ 中互不
     相交的 $A-B$ 路的最大数目。
@@ -66,7 +66,7 @@ V中的元素称为节点或顶点（node或vertex）， E中的元素称为边�
 \end{equation}
 \subsection{规则网络}
 如果系统中节点及其与边的关系是固定的，每个节点都有相同的度数，就可以用规则图来表示这个系统。这样的网络就称为规则网络。
-常见的规则网络包括：全局耦合网络; 最近邻耦合网络; 星形耦合网络。
+常见的规则网络包括：全局耦合网络、最近邻耦合网络和星形耦合网络等。他们的结构示意图如下：
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{guize.png}
@@ -96,7 +96,7 @@ V中的元素称为节点或顶点（node或vertex）， E中的元素称为边�
 \noindent(2) 随机连边:\par
 1) 随机选取一对没有边相连的不同的节点，并在这对节点之间添加一 条边。\par
 2)重复步骤1)，直至在 $M$ 对不同的节点对之间各添加了一条边。\par
-然后是以一定概率连接各独立顶点的ER 随机图 $G(N,p)$ 构造算法\par
+然后给出以一定概率连接各独立顶点的ER 随机图 $G(N,p)$ 构造算法：\par
 \noindent(1) 初始化: 给定 $N$ 个节点以及连边概率 $p \in[0,1]$ 。\par
 \noindent(2) 随机连边:\par
 1) 选择一对没有边相连的不同的节点。\par
@@ -153,8 +153,7 @@ $G(N,M)$中节点度的概率分布符合泊松分布。
     C=p=\langle k\rangle /(N-1)
 \end{equation}
 \subsubsection{WS小世界模型}
-WS小世界模型是通过在规则图上做带有随机性的更改形成的。\par
-\noindent WS模型构建算法\par
+WS小世界模型是通过在规则图上做带有随机性的更改形成的。下面给出WS模型构建算法如下：\par
 \noindent(1) 从规则图开始: 给定一个含有 $N$ 个点的环状最近邻耦合网络，其中 每个节点都与它左右相邻的各 $K / 2$ 个节点相连，$K$ 是偶数。\par
 \noindent(2) 随机化重连: 以概率 $p$ 随机地重新连接网络中原有的每条边，即把 每条边的一个端点保持不变，另一个端点改取为网络中随机选择的一个节点。
 其中规定不得有重边和自环。\par
@@ -163,8 +162,8 @@ WS小世界模型是通过在规则图上做带有随机性的更改形成的。
     \includegraphics[width=0.8\textwidth]{wsp.png}
     \caption{WS随机网络的构造}
 \end{figure}
-可以看出，$p=0$时是完全规则的网络，$p=1$时是完全随机的网络。WS模型的聚类系数与平均路径长度时关于重连概率$p$的函数
-其关系如图
+可以看出，$p=0$时是完全规则的网络，$p=1$时是完全随机的网络。WS模型的聚类系数与平均路径长度是关于重连概率$p$的函数，
+其关系如下图\par
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{WS.png}
@@ -178,7 +177,7 @@ WS模型的聚类系数的估计如下
     & =\frac{3(K-2)}{4(K-1)}(1-p)^3+O(1 / N) \\
     & =C_{n c}(1-p)^3+O(1 / N)
     \end{aligned}
-\end{equation}
+\end{equation}\par
 下面来研究WS模型的度分布，在 $p>0$ 时，每个节点仍与顺时针方向的 $K / 2$ 条原有的边相连,即每个节点的度至少为 $K / 2$ 。
  为此,记节点 $i$ 的度为 $k_i=s_i+K / 2$。 $s_i$ 又可分为两部分: 
  $s_i=s_i^1+s_i^2$，$s_i^1$ 表示在原有的与节点 $i$ 相连的逆时针方向的 $K / 2$ 条边中保持不变的边的数目，
@@ -202,11 +201,11 @@ WS模型的聚类系数的估计如下
     \end{array}\right)(1-p)^n p^{K / 2-n} \frac{(p K / 2)^{k-(K / 2)-n}}{(k-(K / 2)-n) !} \mathrm{e}^{-p K / 2}
 \end{equation}
 \subsubsection{NW小世界模型}
-NW小世界模型是通过在规则图上有随机性的增加长程边形成的，相比WS模型，这是一种更常见的小世界模型。\par
-\noindent NW模型构建算法\par
+NW小世界模型是通过在规则图上有随机性的增加长程边形成的，相比WS模型，这是一种更常见的小世界模型。
+下面给出NW模型构建算法如下\par
 \noindent(1) 从规则图开始: 给定一个含有 $N$ 个节点的环状最近邻耦合网络，其中每个节点都与它左右相邻的各 $K / 2$ 个节点相连，$K$ 是偶数。\par
 \noindent(2) 随机化加边: 以概率 $p$ 在随机选取的 $NK / 2$ 对节点之间添加边，其中 规定不得有重边和自环。\par
-首先讨论聚类系数，NW模型的聚类系数采用几何聚类系数来讨论，$p=0$ 时，网络中的三角形数量为 
+首先讨论NW模型的聚类系数，NW模型的聚类系数采用几何聚类系数来讨论，$p=0$ 时，网络中的三角形数量为 
 $\frac{1}{4} N K\left(\frac{1}{2} K-1\right)$。$ p>0$ 时，
 现在我们需要计算在添加了长程边之后新增加的三角形的数量。 网络中长程边的平均数为 $\frac{1}{2} N K p$，
 这些边可以在 $\frac{1}{2} N(N-1)$ 个点对之间添加，每一对节点之间有长程边相连的概率为
@@ -334,17 +333,6 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
     那么，原点 $x=0$ 是渐近稳定的。
 \end{theorem}
 满足式(2.33)的连续可微函数 $V(x)$ 称为李雅普诺夫函数。对于某个 $c>0$，曲面 $V(x)=c$ 称为李雅普诺夫面或等位面。
-下面是Barbashin-Krasovski定理。 
-\begin{theorem}
-    设 $x=0$ 是方程的平衡点，$V: R^n \rightarrow R$ 是一个连续可微函数，且满足
-    \begin{equation}
-        \begin{gathered}
-        V(0)=0 \text { 且 } V(x)>0,\quad \forall x \neq 0 \\
-        \|x\| \rightarrow \infty \Rightarrow V(x) \rightarrow \infty \\
-        \dot{V}(x)<0,\quad \forall x \neq 0
-        \end{gathered}
-     \end{equation}
-\end{theorem}
 下面是Chetaev定理，用于确定非稳定平衡点的不稳定性。
 \begin{theorem}
     设 $x=0$ 是方程 $(4.1)$ 的平衡点。设 $V: D \rightarrow R$ 是连续可微函数，满足 $V(0)=0$，
@@ -364,7 +352,7 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
 \end{equation}
 转换为若尔当标准型
 \begin{equation}
-    P^{-1} A P=J=\text { block } \operatorname{diag}\left[J_1,J_2,\cdots,J_r\right]
+    P^{-1} A P=J=\operatorname{diag}\left[J_1,J_2,\cdots,J_r\right]
 \end{equation}
 \begin{equation}
     J_i=\left[\begin{array}{cccccc}
@@ -458,50 +446,7 @@ Devaney 定义从另外的角度刻画了混沌的重要特征， 包括:(1) 初
 \subsubsection{混沌的特征}
 1976 年，P.Myrberg 发表的《具有极复杂动力学的简单数学模型》对混沌理论研究起到了重要作用，文中指出了一些具有分岔、混沌等极为复杂的动力学行为的简
 单数学模型。随后 M.Feigenbaum 发现了倍周期分岔中的标度性和普适常数，即通过周期不断地加倍而产生混沌，途径为：不动点 →2 周期点 →4 周期点 → ······→ 极限点 → 奇异吸引子。
-以一维 Logistic 映射为例，展现上述过程。Logistic 映射为
-\begin{equation}
-    x_{n+1}=\mu x_n\left(1-x_n\right), \quad x_i \in[0,1], \mu \in[0,4] .
-\end{equation}
-首先求周期 1 解，即经过一次迭代后的不动点$x_{n+1}=x_n$。
-由 $x_n=\mu x_n\left(1-x_n\right)$，解得 $x_1^*=0, x_2^*=1-1 / \mu$. 因 $x_i \in[0,1]$ (由模型代表的 客观实际所决定，如某物种在自然界所占百分比)， 而当 $0 \leqslant \mu<1$ 时，$x_2^*<0$ 不符
-合。 另外稳定性要求 $\left|\partial x_{n+1} / \partial x_n\right|<1$, 令 $A=\left|\partial x_{n+1} / \partial x_n\right|=\mu\left(1-2 x_n\right)$, 则有：\par
-(1) $0 \leqslant \mu<1$ 时， 映射有一个周期 1 不动点 $x_1^*=0$, 且 $A=\left|\partial x_{n+1} / \partial x_n\right|_{x^*=0}=$ $\mu\left(1-2 x_n\right)_{x^*=0}=\mu$， 
-故其是映射在 $[0,1]$ 内稳定的周期 1 不动点。\par
-(2) $1<\mu<3$ 时，映射有两个周期 1 不动点 $x_1^*=0, x_2^*=1-1 / \mu$。又因 $A=$ $\left|\partial x_{n+1} / \partial x_n\right|_{x^*=0}=\mu>1$，
-故 $x_1^*=0$ 为不稳定不动点；$A=\left|\partial x_{n+1} / \partial x_n\right|_{x^*=1-1 / \mu}=$ $2-\mu$，
-则 $|A|=|2-\mu|<1$, 故 $x_2^*=1-1 / \mu$ 是映射的稳定不动点。\par
-(3) $3<\mu<1+\sqrt{6}$ 时，两个不动点所对应的 $|A|$ 均大于 1， 故不动点 $x_1^*, x_2^*$ 均 失稳， 此时系统无周期 1 解，只能考虑周期 2 解 (迭代两次后的不动点)。2 次迭代后的映射为
-\begin{equation}
-    x_{n+2}=\mu x_{n+1}\left(1-x_{n+1}\right)=\mu^2 x_n\left(1-x_n\right)\left[1-\mu x_n\left(1-x_n\right)\right] \text {, }
-\end{equation}
-该映射有四个不动点，其中 $x_1^*=0, x_2^*=1-1 / \mu$ 不稳定 (由上)，而不动点 
-$x_3^*=$ $[1+\mu+\sqrt{(\mu+1)(\mu+3)}] / 2, x_4^*=[1+\mu-\sqrt{(\mu+1)(\mu+3)}] / 2$ 稳定 (证明同上)， 故此时系统有两个周期 2 解。\par
-(4) 如此继续，出现四周期、八周期情形。\par
-最终当 $\mu= 3.5699$时, 迭代数列不再具有稳定的周期性，系统进入混沌状态。\par
-为观测 $\mu$ 对迭代格式 $x_{n+1}=\mu x_n\left(1-x_n\right)$ 的影响，将区间 $(0,4]$ 以步长 $\Delta \mu$ 离散化。对每个离散的 $\mu$ 值进行迭代，忽略前 50 个迭代值，
-把点 $\left(\mu, x_{51}\right),\left(\mu, x_{52}\right), \cdots$, $\left(\mu, x_{100}\right)$ 显示在坐标平面上，
-构成 Feigenbaum 图，它反映了分岔与混沌的基本特性。
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Feigenb.png}
-    \caption{Logistic 迭代的 Feigenbaum 图}
-\end{figure}
-从 Feigenbaum 图可以看出，当 $\mu \in(0,1)$ 时，0 是稳定的不动点；当 $\mu \in(1,3)$ 时，0 是排斥点，$\mu_4=(\mu-1) / \mu$ 是稳定的不动点；
-当 $\mu \in(3,3.4494897)$ 时，迭代变为 2 周期轨道，$\mu_1=3$ 是第一个分岔点；当 $\mu \in(3.4494897,3.544090)$ 时，迭代变 为 4 周期轨道，
-$\mu_2=3.4494897$ 是第二个分岔点；当 $\mu \in(3.544090,3.564407)$ 时，迭 代变为 8 周期轨道，$\mu_3=3.544090$ 是第三个分岔点；
-下面迭代将依次分叉为 16 周期、32 周期、64 周期······这种分岔形式称为倍周期分岔，相应的分岔点为
-\begin{equation*}
-   \mu_4=3.564407, \mu_5=3.568759, \mu_6=3.569692, \mu_7=3.569891, \mu_8=3.569934,
-\end{equation*}
-参数 $\mu$ 收敛到 $\mu_{\infty}$，次收玫序列可表示为
-\begin{equation}
-    \mu_n=\mu_{\infty}-c / \delta^n, \quad n \gg 1
-\end{equation}
-式中$\delta$称为 Feigenbaum 常数，
-\begin{equation}
-    \delta=4.6692016091, \quad c=2.6327, \quad \mu_{\infty}=3.5699456
-\end{equation}
-20 世纪 40 年代，andau 与 Hopf 先后独立提出了一种湍流发生的机制，其基本思想是：在雷诺数 Re 由极小逐渐增大的过程中，
+\par20 世纪 40 年代，andau 与 Hopf 先后独立提出了一种湍流发生的机制，其基本思想是：在雷诺数 Re 由极小逐渐增大的过程中，
 流体依次经历与时间无关的层流状态，此时对应相空间的稳定不动点；一次 Hopf 分岔，流体因频率为$\omega_1$ 的振荡出现失稳；
 二次 Hopf 分岔，出现新的频率为$\omega_2$的振荡，这种准周期运动使流体运动更加复杂；随着 Re 继续增大，
 将出现更多频率的准周期运动，最后出现极复杂 的准周期运动，即为湍流。然而，试验证明该湍流理论并不符合实际。\par
@@ -559,8 +504,8 @@ KAM 定理指出：近 Hamilton 系统的轨线分布在一些层层相套的环
 
 
 \subsubsection{LE指数}
-最大Lyapunov指数是判断非线性时间序列是否为混沌系统的重要指标，混沌运动的基本特点是运动对初始条件的扰动极为敏感，
-两个靠近的初始值所产生的轨道，随时间推移按指数方式分离，Lyapunov指数就是用以描述这一现象的量。
+最大LE指数是判断非线性时间序列是否为混沌系统的重要指标，混沌运动的基本特点是运动对初始条件的扰动极为敏感，
+两个靠近的初始值所产生的轨道，随时间推移按指数方式分离，LE指数就是用以描述这一现象的量。
 在一维动力系统 $x_{n+1}=F\left(x_{n}\right)$ 中， 初始两点迭代后互相分离或者靠昽，取决于导数
 $\left|\frac{d F}{d x}\right|$ 的值。若 $\left|\frac{d F}{d x}\right|>1$, 则两点分开；
 若$\left|\frac{d F}{d x}\right|<1$，则得两点靠拢。有时在迭代过程中，$\left|\frac{d F}{d x}\right|$ 
@@ -580,45 +525,18 @@ $\left|\frac{d F}{d x}\right|$ 的值。若 $\left|\frac{d F}{d x}\right|>1$, �
 \begin{equation}
     \quad \lambda\left(x_{0}\right)=\lim _{n \rightarrow \infty} \frac{1}{n} \sum_{i=0}^{n-1} \ln \left|\frac{d F(x)}{d x}\right|_{x=x_{0}}
 \end{equation} 
-$\lambda$ 与初值的选取没有关系，称为原动力系统的Lyapunov指数，表示系统在多次迭代中平均每次迭代所引起的指数分离中的指数。
+$\lambda$ 与初值的选取没有关系，称为原动力系统的LE指数，表示系统在多次迭代中平均每次迭代所引起的指数分离中的指数。
 若 $\lambda<0$，则意味着相邻点要靠拢合并成一点，这对应于稳定的不动点和周期运动；
 若 $\lambda>0$，则意味着相邻点要分离，对应于轨道的局部不稳定。
-对于 $n$ 维动力系统，设 $\mathrm{F}$ 为 $\mathbf{R}^{n} \rightarrow \mathbf{R}^{n}$ 上的 $n$ 维映射，
+\par 对于 $n$ 维动力系统，设 $\mathrm{F}$ 为 $\mathbf{R}^{n} \rightarrow \mathbf{R}^{n}$ 上的 $n$ 维映射，
 设 $n$ 维离散动力系统: $x_{n+1}=\mathrm{F}\left(x_{n}\right)$ 。
 将系统的初始条件域取为一个无穷小的 $n$ 维小球，由于演化过程中球将变成椭球。
-将椭球上所有主轴按其长度顺序排列，第 $i$ 个Lyapunov指数为第 $i$ 个主轴的长度 $P_{i}(n)$ 的增加速率，其定义为
+将椭球上所有主轴按其长度顺序排列，第 $i$ 个LE指数为第 $i$ 个主轴的长度 $P_{i}(n)$ 的增加速率，其定义为
 \begin{equation}
     \sigma_{i}=\lim _{n \rightarrow \infty} \frac{1}{n} \sum_{i=0}^{n-1} \ln \left|\frac{P_{i}(n)}{P_{i}(0)}\right|,(i=1,2, \cdots, n)
 \end{equation}
-对于系统是否存在动力学混沌，从最大 Lyapunov指数是否大于零非常直观的判断出来：一个正的Lyapunov指数，
+对于系统是否存在动力学混沌，从最大 LE指数是否大于零非常直观的判断出来：一个正的LE指数，
 意味着系统相空间中，初始接近的两条轨线，其差别都会随着时间的演化而成指数率的增加以致达到无法预测，这就是混沌现象。
-下面给出LE指数计算方法的理论依据。\par
-设动力学系统由方程式决定: $\dot{\mathbf{X}}=F(\mathbf{X})$
-并考虑轨道相邻两点 $\mathbf{X}$ 和 $\mathbf{X}^{\prime}$，设$\xi=\mathbf{X}-\mathbf{X}^{\prime}$，将系统线性化得
-\begin{equation}
-    \dot{\xi}=T(\mathbf{X}(t)) \cdot \xi
-\end{equation}
-其中 $\mathbf{T}=(\partial F / \partial \mathbf{X})$ 是雅可比矩阵, $\xi$ 是切平面上的切矢量, 将上式积分有
-\begin{equation}
-    \xi(t)=\mathbf{A}^{\prime} \xi(0)
-\end{equation}
-其中，$\mathrm{A}^{\prime}$ 是切向量 $\xi(0)$ 到 $\xi(t)$ 的线性映射算子，因此得到平均指数增长率为
-\begin{equation}
-    \lambda(\mathbf{X}(0), \xi(0))=\lim _{t \rightarrow \infty} \frac{\|\xi(t)\|}{\|\xi(0)\|}
-\end{equation}
-对于重构相空间中的某一点 $\mathbf{X}_{\mathrm{i}}$，与 $\mathbf{X}_{\mathbf{i}}$ 点距离小于 $\varepsilon$ 的所有点记为 $\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}, i=1,2, \cdots\right\}$，位移矢量为 
-\begin{equation}
-    \left\{\mathbf{Y}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\} 
-\end{equation}
-经过时间 $t$ 后，演化为 $\mathbf{X}_{\mathbf{i}} \rightarrow \mathbf{X}_{\mathbf{i + t}}, \mathbf{X}_{\mathbf{k}_{\mathbf{i}}} \rightarrow \mathbf{X}_{\mathbf{k}_{\mathbf{i}}+\mathbf{t}}$，因此原位移矢量 $\left\{\mathbf{Y}^{\mathrm{i}}\right\}$ 映射为
-\begin{equation}
-    \left\{\mathbf{Z}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}+\mathbf{t}}-\mathbf{X}_{\mathbf{i}+\mathbf{t}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\}
-\end{equation}
-如果半径 $\varepsilon$ 足够小，位移矢量 $\left\{\mathbf{Y}^{\mathrm{i}}\right\}$ 和 $\left\{\mathbf{Z}^{\mathrm{i}}\right\}$ 可以近似为切平面上的切矢量，从 $\mathbf{Y}^{\mathrm{i}}$ 到 $\mathbf{Z}^{\mathbf{i}}$ 的矩阵 $\mathbf{A}_{\mathbf{j}}$ 满足
-\begin{equation}
-    \mathbf{Z}^{\mathbf{i}}=\mathbf{A}_{\mathbf{j}} \mathbf{Y}^{\mathbf{i}}
-\end{equation}
-使用最小二乘法，可以矩阵 $\mathbf{A}$, $\mathrm{QR}$ 分解矩阵 $\mathbf{A}$，在不同的时间段内进行 Gram-Schmidt正交化，即可得到所需的lyapunov指数 $\lambda_{i}, i=1,2, \cdots, d$。\par
 \section{复杂网络的同步}
 本节内容来探讨复杂网络中一个重要性质，网络中不同节点的同步性，在一些条件下，原本不协调的各个节点
 会彼此同步，首先需要一个衡量同步性的指标。考虑如下动力方程
@@ -679,7 +597,7 @@ $\boldsymbol{\Lambda}=\operatorname{diag}\left(\lambda_1, \ldots, \lambda_N\righ
 \begin{equation}
     \dot{y}=[\boldsymbol{D} \boldsymbol{f}(s)-\alpha \boldsymbol{D} \boldsymbol{H}(s)] \boldsymbol{y}
 \end{equation}
-该方程的最大 Lyapunov 指数 $L_{\max }$ 是关于实变量 $\alpha$ 的函数，称为网络系统的主稳定函数。
+该方程的最大 LE指数 $L_{\max }$ 是关于实变量 $\alpha$ 的函数，称为网络系统的主稳定函数。
 把使得主稳定函数 $L_{\max }$ 为负的实数 $\alpha$ 的取值范围 $S$ 称为网络系统的同步化区域，它是由孤立节点的动力学函数 $f(\cdot)$ 和输出函数
 $H(\cdot)$ 确定的。如果耦合强度与 Laplacian 矩阵的每个非零特征值之积都属于同步化区域，即
 \begin{equation}
@@ -695,7 +613,7 @@ $H(\cdot)$ 确定的。如果耦合强度与 Laplacian 矩阵的每个非零特�
 $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交矩阵且$c$稀疏。
 取$m\times n$的矩阵$A$，其中$m<n$。令
 \begin{equation}
-    y=Ax,y=A\Phi c
+    y=Ax\text{或}y=A\Phi c
 \end{equation}
 稀疏重构问题是指在已知原向量$x$中零元素足够多的情况下从$y$与$A$中还原出$x$，矩阵$A$被称为感应矩阵。
 
@@ -722,7 +640,7 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
 \end{theorem}
 
 \subsubsection{稀疏重构解的唯一性的条件}
-这里对0范数和1范数分别给出其等价条件。
+这里对$l_0$和$l_1$范数分别给出其等价条件。
 \begin{definition}
     取$m\times N$的矩阵$A$，$ \operatorname{spark}(A)$是$A$的列向量线性相关的最小向量数目。
 \end{definition}
@@ -733,7 +651,7 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
    \end{equation}
    并且$\operatorname{spark}(A) \in[2,m+1]$。
 \end{lemma}
-下面是0范意义$P_0$下解的唯一性的等价条件。
+下面是$l_0$范意义$P_0$下解的唯一性的等价条件。
 \begin{theorem}
     令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
     （i）若存在$P_0$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
@@ -760,7 +678,7 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
         \left\|1_{\Lambda} h\right\|_1<\frac{1}{2}\|h\|_1
     \end{equation}
 \end{definition}
-下面是1范意义$P_1$下解的唯一性的等价条件。
+下面是$l_1$范意义$P_1$下解的唯一性的等价条件。
 \begin{theorem}
     令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
     （i）若存在$P_1$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
@@ -808,7 +726,7 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
         \mu(A) \in\left[\sqrt{\frac{N-m}{m(N-1)}},1\right]
     \end{equation}
 \end{lemma}
-通过这个结果可以给出一个使0范数与1范数的一致的充分条件。
+通过这个结果可以给出一个使$l_0$范数与$l_1$范数的一致的充分条件。
 \begin{theorem}
     令$A$是$m\times N$阶矩阵，$x \in \mathbb{R}^N \backslash\{0\}$是$(P_0)$问题的
     一个解，并且有
@@ -817,73 +735,6 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
     \end{equation}
     那么$x$是$(P_0)$和$(P_1)$问题的唯一解。
 \end{theorem}
-
-\begin{definition}
-    令$A$是$m\times N$阶矩阵，称$A$具有$k$阶有限等距性质（RIP），如果$\exists \delta_k
-    \in (0,1)$，使得$\forall x \in \Sigma_k$，均有
-    \begin{equation}
-        \left(1-\delta_k\right)\|x\|_2^2 \leq\|A x\|_2^2 \leq\left(1+\delta_k\right)\|x\|_2^2
-    \end{equation}
-\end{definition}
-下面的定理说明$P_1$问题的解与真实解在欧氏距离下被控制住。
-\begin{theorem}
-    令$A$是$m\times N$阶具有$2k$阶有限等距性质（RIP）的矩阵，其中$\delta_{2 k}<\sqrt{2} -1$。
-    令$x \in \mathbb{R}^n$，$\hat{x}$是$(P_1)$的一个解，那么
-    \begin{equation}
-        \|x-\hat{x}\|_2 \leq C \cdot\left(\frac{\sigma_k(x)_1}{\sqrt{k}}\right)
-    \end{equation}
-    其中$C$是某个关于$\delta_{2 k}$的常数。
-\end{theorem}
-令
-\begin{equation}
-    C^n=\left\{x \in \mathbb{R}^N:\|x\|_1 \leq 1\right\}
-\end{equation}
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，多面体$P=A C^N \subseteq \mathbb{R}^m$，下述条件等价。\par
-    （i）$P$的$k$面数与$C^N$的$k$面数相等。\par
-    （ii）$(P_0)=(P_1)$
-\end{theorem}
-如下方法说明，随机矩阵是大概率满足RIP性质的矩阵，因而稀疏度问题可以转化为更容易的形式。
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，并且每个列向量都是归一化的。\par
-    (i)$\operatorname{spark}(A) \geq 1+\frac{1}{\mu(A)}$。\par
-    (ii)$A$满足$k$阶RIP性质，其中$\delta_k=k \mu(A),\forall  k<\mu(A)^{-1}$。\par
-    (iii)假设$A$具有$2k$阶RIP性质，其中$\delta_{2 k}<\sqrt{2} -1$，如果
-    \begin{equation}
-        \frac{\sqrt{2} \delta_{2 k}}{1-(1+\sqrt{2}) \delta_{2 k}}<\sqrt{\frac{k}{N}}
-    \end{equation}
-    则$A$有$2k$阶NSP性质。
-\end{theorem}
-下面来总结一些特殊感应矩阵的稀疏度与相关性指数。
-首先是$m\times N$阶范德蒙矩阵$A$，它的稀疏度是
-\begin{equation}
-    \operatorname{spark}(A)=m+1
-\end{equation}
-如果是由两个相互无偏正交基构成的矩阵，则其相关性指数为
-\begin{equation}
-    \mu\left(\left[\Phi_1 \mid \Phi_2\right]\right)=\frac{1}{\sqrt{m}}
-\end{equation}
-从一些已知结构生成的矩阵，如Alltop序列或格拉斯曼框架生成出的$m\times m^2$阶矩阵，则其相关性指数为
-\begin{equation}
-    \mu(A)=\frac{1}{\sqrt{m}}
-\end{equation}
-\begin{lemma}
-    令$\epsilon \in \left( 0,1\right)$，$x_1,x_2,...,x_p\in \mathbb{R}^N$，并且$m=O\left(\varepsilon^2
-    \log p\right)$是一个正整数。则存在一个李普希茨映射$f:\mathbb{R}^N \rightarrow \mathbb{R}^m$，使得
-    \begin{equation}
-        (1-\varepsilon)\left\|x_i-x_j\right\|_2^2 \leq\left\|f\left(x_i\right)-f\left(x_j\right)\right\|_2^2 
-        \leq(1+\varepsilon)\left\|x_i-x_j\right\|_2^2 \quad \forall i,j \in\{1,\ldots,p\}
-    \end{equation}
-\end{lemma}
-对于$\forall x \in \mathbb{R}^N$ ，由某个概率分布产生的随机矩阵$A$对应的变换满足引理条件的概率为
-\begin{equation}
-    \mathbb{P}\left((1-\varepsilon)\|x\|_2^2 \leq\|A x\|_2^2 \leq(1+\varepsilon)\|x\|_2^2\right) \leq 1-2 e^{-c_0 \varepsilon^2 m}
-\end{equation}
-\begin{theorem}
-    令$\delta \in (0,1)$，若由某个概率分布产生的随机矩阵$A$在$\varepsilon =\delta$时满足上式中的条件，
-    那么存在两个常数$c_1,c_2$，在概率不大于$1-2 e^{-c_2 \delta^2 m}$的条件下，$A$满足$k \leq  \frac{c_1 \delta^2m}{\log (n / k)}$阶RIP性质。
-\end{theorem}
-由此可见，通过随机构建一个列数够大的矩阵，即$m>\delta^{-2} k \log (N / k)$就可以满足RIP性质的要求。
 \subsection{稀疏重构算法}
 经过上节的讨论得知，某些情况下$P_0$问题可以转换为$P_1$问题，而$P_1$是经典的基追踪问题，是可解的，首先说明这种情况，下述定理从理论上说明了
 若找的$P_1$的唯一解，则这个解的稀疏度可以得到控制。
@@ -931,14 +782,13 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
     \end{cases}
 \end{equation}
 进而用一般的线性规划算法求解即可。\par
-\subsubsection{贪心策略}
-下采用贪心策略的启发式算法，并不一定能收敛到最优解，但是对条件的适应性强，同时有令人满意的速度。首先是最经典的正交追踪，这个算法
+另一类稀疏重构算法是采用贪心策略算法，并不一定能收敛到最优解，但是对条件的适应性强，同时有令人满意的速度。首先是最经典的正交追踪算法（OMP），这个算法
 通过不断引入在我们期望的方向上投影最大的向量，逐步达到问题条件的同时满足构造较小的支撑集。\par
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{omp.png}
 \end{figure}
-下面的引理指出$\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}$
+下面的引理指出上述OMP算法中采用的策略$\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}$
 确实是一个好的贪心策略，确实满足了条件在欧氏距离下的最佳逼近。
 \begin{lemma}
     令$\mathbf{A} \in \mathbb{C}^{m \times N}$是列归一化矩阵，给定的$S \subset[N]$，$\mathbf{v}$支撑在$S$上，并且
