@@ -1,6 +1,27 @@
 \chapter{基础理论}
 \section{复杂网络和混沌基本理论}
+21世纪是复杂性和网络化的世纪。从20世纪七八十年代开始，在国际上形成了非线性科学和复杂性问题的研究热潮。尤其是20世纪90年代以来，
+人类已经生活在一个充满各种各样复杂网络的世界中，许多复杂性问题都可以从复杂网络的角度去研究。
+随着以互联网为代表的网络信息技术的迅速发展,人类社会已经迈入了复杂网络时代。人类的生活与生产活动越来越多地依赖于各种复杂网络系统安全可靠和有效的运行。
+作为一个跨学科的新兴领域，“网络科学与工程”已经逐步形成并获得了迅猛发展。现在，许多发达国家的科学界和工程界都将这个新兴领域提上了国家科技发展规划的议事日程。
+在中国，复杂系统包括复杂网络作为基础研究也已列入《国家中长期科学和技术发展规划纲要(2006-2020年)》。\par
+网络科学与工程重点研究自然科学技术和社会政治经济中各种复杂系统微观性态与宏观现象之间的密切联系，特别是其网络结构的形成机理与演化方式、
+结构模式与动态行为、运动规律与调控策略,以及多关联复杂系统在不同尺度下行为之间的相关性等。网络科学与工程融合了数学、统计物理、计算机科学及各类工程技术科学，
+探索采用复杂系统自组织演化发展的思想去建立全新的理论和方法，其中的网络拓扑学拓展了人们对复杂系统的认识，而网络动力学则更深入地刻画了复杂系统的本质。
+网络科学既是数学中经典图论和随机图论的自然延伸，也是系统科学和复杂性科学的创新发展。\par
+
+图论是一种强有力的研究工具和研究方法。图(Graph)提供了一种用抽象的点和线表示各种实际网络的统一方法，因而也成为目前研究复杂网络的一种共同的语言。
+下面我们给出图论的几个基本概念。
 \subsection{图论的基本知识}
+图是对系统中基本单元（称为节点）集合，以及每两个基本单元之间关系（边）集合之间关系的描述。图可以定义为一个三元组$G=(V,E,\phi)$
+集合$V=\{v_1,v_2,…,v_n\}$称为节点集；
+集合$E=\{e_1,e_2,…,e_m\}$称为边集；
+
+$\phi$是边集E到节点集V的一个映射，称为关联函数。
+V中的元素称为节点或顶点（node或vertex）， E中的元素称为边、弧或连线（edge，arc或line），且E中的每条边em都有V的一对节点$(v_i,v_j)$与之对应。
+用计算机分析实际网络的性质面临的第一个问题就是如何在计算机中表示一个网络。图的矩阵表示架起了图论与矩阵论之间的桥梁，通过这种表示方法就能借助于矩阵的理论和分析方法来研究图论中的问题。
+邻接矩阵描述了节点与节点之间的邻接关系，通常会用一个方阵A来表示，方阵中的元素用$a_{ij}$表示。          
+
 记$G=(V,E)$为一个非空图，其中$V$是其顶点集，$E$是边集。图中一点$v$的相邻点集记为$N(v)$，顶点的度是指与其相连的边的个数
 记为$d(v)$，一个图的平均度定义为
 \begin{equation}
@@ -15,24 +36,13 @@
 \begin{definition}
     如果非空图$G$中任意两顶点之间均有一条路相连，称图$G$为联通图。
 \end{definition}
-给定子图 $A，B \subseteq V$ 和 $X \subseteq V \cup E$，如果 $G$ 的每条 $A-B$ 路均包含 $X$ 中的一个顶点或一条边,
+给定子图 $A,B \subseteq V$ 和 $X \subseteq V \cup E$，如果 $G$ 的每条 $A-B$ 路均包含 $X$ 中的一个顶点或一条边,
 称在 $G$ 中 $X$ 分离 (separate) 集合 $A$ 和 $B$ 。
 下面是图论中一个重要的定理
 \begin{theorem}
-    设 $G=(V,E)$ 是一个图且 $A，B \subseteq V$ 。那么，在$G$ 中分离 $A$ 和 $B$ 的顶点的最小数目等于 $G$ 中互不
+    设 $G=(V,E)$ 是一个图且 $A,B \subseteq V$ 。那么，在$G$ 中分离 $A$ 和 $B$ 的顶点的最小数目等于 $G$ 中互不
     相交的 $A-B$ 路的最大数目。
 \end{theorem}
-\begin{proof}
-    对 $\|G\|$ 使用数学归纳法。若 $G$ 不含边，则有 $|A \cap B|=k$ 并且存在 $k$ 条平凡的 $A-B$ 路。 
-    设 $G$ 包含边 $e=x y$ 。如果 $G$ 无 $k$ 条不交的 $A-B$ 路，那么 $G / e$ 也没有; 
-    若 在 $G$ 中 $x$ 和 $y$ 两顶点中存在一个顶点属于 $A$ (或者 $B$ )，顶点 $v_e$ 
-    看为 $G / e$ 中 $A$ (或 者 B) 的元素。由归纳假设，$G / e$ 包含一个少于 $k$ 个顶点的 $A-B$ 分隔 $Y$,
-     其中顶点 $v_e$ 在 $Y$ 中; 否则，$Y \subseteq V$ 是 $G$ 的一个 $A-B$ 分隔，矛盾。于是,
-     $X:=\left(Y /\left\{v_e\right\}\right) \cup\{x，y\}$ 是 $G$ 的一个 恰好有 $k$ 个顶点的 $A-B$ 分隔。
-      所以这个 $A-X$ 分隔至少有 $k$ 个顶点。由归纳假设，$G-e$ 中存在 $k$ 条不交的 $A-X$ 路; 
-      同样 $G-e$ 中存在 $k$ 条不交的 $X-B$ 路。由于 $X$ 分离 $A$ 和 $B$，这两个路系统不会在 $G/ X$ 相交，
-      故它们可以合并成 $k$ 条不交的 $A-B$ 路。
-\end{proof}
 网络中节点的距离定义为连接这两个点的最小所经边数目。网络的平均长度定义为
 \begin{equation}
     L=\frac{1}{\frac{1}{2} N(N-1)} \sum_{i \neq j} d_{i j}
@@ -54,24 +64,46 @@
 \begin{equation}
     C=\frac{1}{N} \sum_{i=1}^N C_i
 \end{equation}
+\subsection{规则网络}
+如果系统中节点及其与边的关系是固定的，每个节点都有相同的度数，就可以用规则图来表示这个系统。这样的网络就称为规则网络。
+常见的规则网络包括：全局耦合网络; 最近邻耦合网络; 星形耦合网络。
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{guize.png}
+    \caption{规则网络}
+\end{figure}
+
 \subsection{复杂网络}
-复杂网络是指不规则、度分布不均匀的网络模型，生成复杂网络的做法是在规则网络上做具有一定随机性的更改。本节内容会给出
-几种常见的复杂网络模型与其性质。
-\subsubsection*{ER随机图}
-随机网络的生成方式有很多种，ER随机图是随机网络模型中最经典的一种，其顶点采用完全随机连边的方式进行连接，它是一种完全随机图
-，是随机性最强的图。下面我们给出具有固定边数的ER随机图$G(N,M)$的构造算法：\par 
+系统是由相互作用和相互依赖的若干组成部分结合的具有特定功能的有机整体。从三个方面理解系统的概念：
+     ①系统是由若干要素（部分）组成的。
+     ②系统有一定的结构。
+     ③系统有一定的功能。
+     系统有如下的属性：
+     集合性、相关性、层次性、整体性、涌现性、对环境的适应性
+从图论意义上理解网络，网络是指由节点和连线构成的图。有时用带箭头的连线表示从一个节点到另一个节点存在的某种顺序关系。有时在节点或连线旁标出数值，称为点权或线权，有时不标任何数。
+网络和系统通常是密切联系的，如果用节点表示系统的各个组成部分即系统的元素，两个节点之间的连线表示系统元素之间的相互作用，那么网络就为研究系统提供了一种新的描述方式。
+一般认为复杂系统具有以下特征：非线性与动态性、非周期性和开放性、奇怪吸引性、结构自相似性（分形）。另外，复杂系统还具有突现性、不稳性、不确定性、不可预测性等特征。
+复杂网络可以看作由一些具有独立特征的又与其他个体相互连接的节点的集合，每个个体可视为图中一个节点，节点间的相互连接视为图中的边。复杂网络包括两个层面：作为其连接拓扑结构的图和作为其状态和功能的系统。
+\par 钱学森给出了复杂网络的一个较严格的定义：具有自组织、自相似、吸引子、小世界、无标度中部分或全部性质的网络称为复杂网络。
+原则上说，任何包含大量组成单元（或子系统）的复杂系统，当我们把构成单元抽象成节点，单元之间的相互作用抽象为边时，都可以当作复杂网络来研究。
+
+复杂网络是指不规则、度分布不均匀的网络模型，常见的复杂网络模型有全随机方式生成的ER随机图，在规则网络上进行修改的小世界模型。本节内容会给出
+这几种的复杂网络模型的生成方法与其性质。
+\subsubsection{ER随机图}
+与完全规则网络相反的是完全随机网络。典型的模型是Erdös和Rényi于40多年前开始研究的ER随机图模型，其顶点采用完全随机连边的方式进行连接，它是一种完全随机图
+，是随机性最强的图。下面我们首先给出具有固定次数连接独立两点的ER随机图$G(N,M)$的构造算法：\par 
 \noindent(1) 初始化: 给定 $N$ 个节点和待添加的边数 $M$ 。\par
 \noindent(2) 随机连边:\par
-【1】 随机选取一对没有边相连的不同的节点，并在这对节点之间添加一 条边。\par
-【2】重复步骤【1】，直至在 $M$ 对不同的节点对之间各添加了一条边。\par
-\noindent 以一定概率连接的ER 随机图 $G(N,p)$ 构造算法\par
+1) 随机选取一对没有边相连的不同的节点，并在这对节点之间添加一 条边。\par
+2)重复步骤1)，直至在 $M$ 对不同的节点对之间各添加了一条边。\par
+然后是以一定概率连接各独立顶点的ER 随机图 $G(N,p)$ 构造算法\par
 \noindent(1) 初始化: 给定 $N$ 个节点以及连边概率 $p \in[0,1]$ 。\par
 \noindent(2) 随机连边:\par
-【1】 选择一对没有边相连的不同的节点。\par
-【2】 生成一个随机数 $r \in(0,1)$ 。\par
-【3】 如果 $r<p$，那么在这对节点之间添加一条边; 否则就不添加边。\par
-【4】 重复步骤【1】-【3】，直至所有的节点对都被选择过一次。\par
-主要对第二种$G(N,M)$进行性质分析。首先生成的随机图恰好具有 $M$ 条边的概率为
+1) 选择一对没有边相连的不同的节点。\par
+2) 生成一个随机数 $r \in(0,1)$ 。\par
+3) 如果 $r<p$，那么在这对节点之间添加一条边; 否则就不添加边。\par
+4) 重复步骤1)-3)，直至所有的节点对都被选择过一次。\par
+对第二种$G(N,M)$进行性质分析。首先生成的随机图恰好具有 $M$ 条边的概率为
 \begin{equation}
     P(M)=\left(\begin{array}{c}
     C^2_N \\
@@ -102,7 +134,7 @@ $\left(\begin{array}{c}
 \begin{equation}
     \sigma_M^2=\left\langle M^2\right\rangle-\langle M\rangle^2=p(1-p) \frac{N(N-1)}{2}
 \end{equation}
-$G(N，M)$中节点度的概率分布符合泊松分布。
+$G(N,M)$中节点度的概率分布符合泊松分布。
 \begin{equation}
     P(k)=\left(\begin{array}{c}
     N-1 \\
@@ -120,7 +152,7 @@ $G(N，M)$中节点度的概率分布符合泊松分布。
 \begin{equation}
     C=p=\langle k\rangle /(N-1)
 \end{equation}
-\subsubsection*{WS小世界模型}
+\subsubsection{WS小世界模型}
 WS小世界模型是通过在规则图上做带有随机性的更改形成的。\par
 \noindent WS模型构建算法\par
 \noindent(1) 从规则图开始: 给定一个含有 $N$ 个点的环状最近邻耦合网络，其中 每个节点都与它左右相邻的各 $K / 2$ 个节点相连，$K$ 是偶数。\par
@@ -149,7 +181,7 @@ WS模型的聚类系数的估计如下
 \end{equation}
 下面来研究WS模型的度分布，在 $p>0$ 时，每个节点仍与顺时针方向的 $K / 2$ 条原有的边相连,即每个节点的度至少为 $K / 2$ 。
  为此,记节点 $i$ 的度为 $k_i=s_i+K / 2$。 $s_i$ 又可分为两部分: 
- $s_i=s_i^1+s_i^2，s_i^1$ 表示在原有的与节点 $i$ 相连的逆时针方向的 $K / 2$ 条边中保持不变的边的数目，
+ $s_i=s_i^1+s_i^2$，$s_i^1$ 表示在原有的与节点 $i$ 相连的逆时针方向的 $K / 2$ 条边中保持不变的边的数目，
  其中每条边不变的概率为 $1-p ; s_i^2$ 表示通过随机重连机制连接节点 $i$ 上的长程边，
  每条这样的边的概率 为 $p / N$ 。有
  \begin{equation}
@@ -161,16 +193,16 @@ WS模型的聚类系数的估计如下
     P_2\left(s_i^2\right) \simeq \frac{(p K / 2)^{s_i^2}}{\left(s_i^2\right) !} \mathrm{e}^{-\rho K / 2}\text { 当 } N \text { 充分大时. }
     \end{gathered}
 \end{equation}
-对于任一度为 $k \geqslant K / 2$ 的节点，$s_i^1 \in[0，\min (k-K / 2，K / 2)]$ 。
+对于任一度为 $k \geqslant K / 2$ 的节点，$s_i^1 \in[0,\min (k-K / 2,K / 2)]$ 。
 当$k<K/2$时，$P(k)=0$，当 $k \geqslant$ $K / 2$ 时
 \begin{equation}
-    P(k)=\sum_{n=0}^{\min (k-K / 2，K / 2)}\left(\begin{array}{c}
+    P(k)=\sum_{n=0}^{\min (k-K / 2,K / 2)}\left(\begin{array}{c}
     K / 2 \\
     n
     \end{array}\right)(1-p)^n p^{K / 2-n} \frac{(p K / 2)^{k-(K / 2)-n}}{(k-(K / 2)-n) !} \mathrm{e}^{-p K / 2}
 \end{equation}
-\subsubsection*{NW小世界模型}
-NW小世界模型是通过在规则图上做带有随机性的增加长程边形成的，相比WS模型，这是一种更常见的小世界模型。\par
+\subsubsection{NW小世界模型}
+NW小世界模型是通过在规则图上有随机性的增加长程边形成的，相比WS模型，这是一种更常见的小世界模型。\par
 \noindent NW模型构建算法\par
 \noindent(1) 从规则图开始: 给定一个含有 $N$ 个节点的环状最近邻耦合网络，其中每个节点都与它左右相邻的各 $K / 2$ 个节点相连，$K$ 是偶数。\par
 \noindent(2) 随机化加边: 以概率 $p$ 在随机选取的 $NK / 2$ 对节点之间添加边，其中 规定不得有重边和自环。\par
@@ -263,7 +295,7 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
 \begin{definition}
     对于平衡点$x=0$，如果对于每个 $\varepsilon>0$，都存在 $\delta=\delta(\varepsilon)>0$， 满足
     \begin{equation}
-        \|x(0)\|<\delta \Rightarrow\|x(t)\|<\varepsilon，\quad \forall t \geqslant 0
+        \|x(0)\|<\delta \Rightarrow\|x(t)\|<\varepsilon,\quad \forall t \geqslant 0
     \end{equation}
     则该平衡，点是稳定的。
     如果稳定，且可选择适当的 $\delta$， 满足
@@ -301,51 +333,6 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
     \end{equation}
     那么，原点 $x=0$ 是渐近稳定的。
 \end{theorem}
-\begin{proof}
-    给定 $\varepsilon>0$，任意 $r \in(0,\varepsilon]$，有
-    \begin{equation}
-        B_r=\left\{x \in R^n \mid\|x\| \leqslant r\right\} \subset D
-    \end{equation}
-    设 $\alpha=\min _{\|x\|=r} V(x)$，则由式 (2.33) 得 $\alpha>0$ 。取 $\beta \in(0,\alpha)$，设
-    \begin{equation}
-        \Omega_\beta=\left\{x \in B_r \mid V(x) \leqslant \beta\right\}
-    \end{equation}
-    那么，$\Omega_\beta$ 在 $B_r$ 内  。集合 $\Omega_\beta$ 有如下的性质，
-    当 $t \geqslant 0$ 时，在 $t=0$ 时刻始于 $\Omega_\beta$ 内的任何轨线都保持在 $\Omega_\beta$ 内， 因为
-    \begin{equation}
-        \dot{V}(x(t)) \leqslant 0 \Rightarrow V(x(t)) \leqslant V(x(0)) \leqslant \beta,\forall t \geqslant 0
-    \end{equation}
-    由于 $\Omega_\beta$ 是紧集，只要 $x(0) \in \Omega_\beta$，则对于所有 $t \geqslant 0$，方程有唯一解。
-    因为 $V(x)$ 连续且 $V(0)=0$，故存在 $\delta>0$ 满足
-    \begin{equation}
-        \|x\| \leqslant \delta \Rightarrow V(x)<\beta
-    \end{equation}
-    那么
-    \begin{equation}
-        B_\delta \subset \Omega_\beta \subset B_r
-    \end{equation}
-    并且
-    \begin{equation}
-        x(0) \in B_\delta \Rightarrow x(0) \in \Omega_\beta \Rightarrow x(t) \in \Omega_\beta \Rightarrow x(t) \in B_r
-    \end{equation}
-    因此
-    \begin{equation}
-        \|x(0)\|<\delta \Rightarrow\|x(t)\|<r \leqslant \varepsilon,\quad \forall t \geqslant 0
-    \end{equation}
-    因此平衡点$x=0$是稳定的。现在假设式(2.34)也成立,证明渐近稳定性，即对于每个 $a>0$，存在 $T>0$，使对于所有 $t>T$ 都有 $\|x(t)\|<a$ 。
-    由于对于每个 $a>0$，可选择 $b>0$，满足 $\Omega_b \subset B_a$，因此，$t$趋于无穷时,$V(x(t))$趋于零所以有。
-    \begin{equation}
-        V(x(t)) \rightarrow c \geqslant 0 \text { 当 } t \rightarrow \infty
-    \end{equation}
-    证明 $c=0$，采用反证法。假设 $c>0$，由 $V(x)$ 的连续性可知，存在 $d>0$ 使 $B_d \subset \Omega_c$ 。
-    $V(x(t)) \rightarrow c>0$ 是指所有 $t \geqslant 0$，轨线 $x(t)$ 位于球 $B_d$ 之外。
-    设 $-\gamma=\max _{d \leqslant\|x\| \leqslant r} \dot{V}(x)$，因为连续函数 $\dot{V}(x)$ 在紧集 $\{d \leqslant\|x\| \leqslant r\}$ (1) 上有最大值。
-    由式 (2.34) 可知，$-\gamma<0$，从 而有
-    \begin{equation}
-        V(x(t))=V(x(0))+\int_0^t \dot{V}(x(\tau)) d \tau \leqslant V(x(0))-\gamma t
-    \end{equation}
-    该不等式右项最终为负，故与假设相矛盾。
-\end{proof}
 满足式(2.33)的连续可微函数 $V(x)$ 称为李雅普诺夫函数。对于某个 $c>0$，曲面 $V(x)=c$ 称为李雅普诺夫面或等位面。
 下面是Barbashin-Krasovski定理。 
 \begin{theorem}
@@ -436,140 +423,142 @@ NW模型中长程边的平均数为 $\frac{1}{2} N K p$，涉及的端点数目�
     \end{equation}
     如果 $A$ 的所有特征值都满足 $\operatorname{Re} \lambda_i<0$，则原点是渐近稳定的。如果 $A$ 至少有一个特征值满足 $\operatorname{Re} \lambda_i>0$，则原点是不稳定的。
 \end{theorem}
-\begin{proof}
-    首先证明第一条，由于任何正定对称矩阵$Q$，李雅普诺夫方程的解$P$都是正定的。令$V(x)=x^{\mathrm{T}} P x$，则
-    \begin{equation}
-        \begin{aligned}
-        \dot{V}(x) & =x^{\mathrm{T}} P f(x)+f^{\mathrm{T}}(x) P x \\
-        & =x^{\mathrm{T}} P[A x+g(x)]+\left[x^{\mathrm{T}} A^{\mathrm{T}}+g^{\mathrm{T}}(x)\right] P x \\
-        & =x^{\mathrm{T}}\left(P A+A^{\mathrm{T}} P\right) x+2 x^{\mathrm{T}} P g(x) \\
-        & =-x^{\mathrm{T}} Q x+2 x^{\mathrm{T}} P g(x)
-        \end{aligned}
-    \end{equation}
-    其中
-    \begin{equation}
-        \frac{\|g(x)\|_2}{\|x\|_2} \rightarrow 0 \text { 当 }\|x\|_2 \rightarrow 0
-    \end{equation}
-    对于任意 $\gamma>0$，存在 $r>0$，使
-    \begin{equation}
-        \|g(x)\|_2<\gamma\|x\|_2,\quad \forall\|x\|_2<r
-    \end{equation}
-    因此
-    \begin{equation}
-        \dot{V}(x)<-x^{\mathrm{T}} Q x+2 \gamma\|P\|_2\|x\|_2^2,\quad \forall\|x\|_2<r
-    \end{equation}
-    但是
-    \begin{equation}
-        x^{\mathrm{T}} Q x \geqslant \lambda_{\min }(Q)\|x\|_2^2
-    \end{equation}
-    其中 $\lambda_{\min }(\cdot)$ 表示矩阵的最小特征值。注意， 由于 $Q$ 是对称且正定的，
-    所以 $\lambda_{\text {min }}(Q)$ 为正实数，因此
-    \begin{equation}
-        \dot{V}(x)<-\left[\lambda_{\min }(Q)-2 \gamma\|P\|_2\right]\|x\|_2^2,\quad \forall\|x\|_2<r
-    \end{equation}
-    选择 $\gamma<(1 / 2) \lambda_{\min }(Q) /\|P\|_2$， 以保证 $\dot{V}(x)$ 负定，
-    所以原点是渐近稳定的。\par
-    证明定理的第二条，先考虑 $A$ 在虚轴上没有特征值的特例。如果 $A$ 的特征值集中到右半开平面为一组，
-    左半开平面为一组，那么存在一个满秩矩阵 $T$， 满足
-    \begin{equation}
-        T A T^{-1}=\left[\begin{array}{cc}
-        -A_1 & 0 \\
-        0 & A_2
-        \end{array}\right]
-    \end{equation}
-    并使得$A_1,A_2$的特征值实部均小于零，令
-    \begin{equation}
-        z=T x=\left[\begin{array}{l}
-        z_1 \\
-        z_2
-        \end{array}\right]
-    \end{equation}
-    $z$ 的分块与 $A_1$ 和 $A_2$ 的维数一致。进行变量代换 $z=T x$，则系统
-    \begin{equation}
-        \dot{x}=A x+g(x)
-    \end{equation}
-    被分解为
-    \begin{equation}
-        \begin{aligned}
-        & \dot{z}_1=-A_1 z_1+g_1(z) \\
-        & \dot{z}_2=A_2 z_2+g_2(z)
-        \end{aligned}
-    \end{equation}
-    对于任意 $\gamma>0$，存在$r>0$，对函数 $g_i(z)$ 有
-    \begin{equation}
-        \left\|g_i(z)\right\|_2<\gamma\|z\|_2, \quad \forall\|z\|_2 \leqslant r, i=1,2
-    \end{equation}
-    设$Q_1$和$Q_2$分别是$A_1$和$A_2$，维数相同的正定对称短阵。则方程
-    \begin{equation}
-        P_i A_i+A_i^{\mathrm{T}} P_i=-Q_i, \quad i=1,2
-    \end{equation}
-    有唯一的正定解 $P_1$ 和 $P_2$ 。设
-    \begin{equation}
-        V(z)=z_1^{\mathrm{T}} P_1 z_1-z_2^{\mathrm{T}} P_2 z_2=z^{\mathrm{T}}\left[\begin{array}{cc}
-        P_1 & 0 \\
-        0 & -P_2
-        \end{array}\right] z
-    \end{equation}
-    在子空间 $z_2=0$ 内，对于任意靠近原点的点有 $V(z)>0$ 。设
-    \begin{equation}
-        U=\left\{z \in R^n \mid\|z\|_2 \leqslant r \text { 和 } V(z)>0\right\}
-    \end{equation}
-    则在$U$内，有
-    \begin{equation}
-        \begin{aligned}
-        \dot{V}(z)= & -z_1^{\mathrm{T}}\left(P_1 A_1+A_1^{\mathrm{T}} P_1\right) z_1+2 z_1^{\mathrm{T}} P_1 g_1(z) \\
-        & -z_2^{\mathrm{T}}\left(P_2 A_2+A_2^{\mathrm{T}} P_2\right) z_2-2 z_2^{\mathrm{T}} P_2 g_2(z) \\
-        = & z_1^{\mathrm{T}} Q_1 z_1+z_2^{\mathrm{T}} Q_2 z_2+2 z^{\mathrm{T}}\left[\begin{array}{c}
-        P_1 g_1(z) \\
-        -P_2 g_2(z)
-        \end{array}\right] \\
-        \geqslant & \lambda_{\min }\left(Q_1\right)\left\|z_1\right\|_2^2+\lambda_{\min }\left(Q_2\right)\left\|z_2\right\|_2^2 \\
-        & -2\|z\|_2 \sqrt{\left\|P_1\right\|_2^2\left\|g_1(z)\right\|_2^2+\left\|P_2\right\|_2^2\left\|g_2(z)\right\|_2^2} \\
-        > & (\alpha-2 \sqrt{2} \beta \gamma)\|z\|_2^2
-        \end{aligned}
-    \end{equation}
-    其中
-    \begin{equation}
-        \alpha=\min \left\{\lambda_{\min }\left(Q_1\right), \lambda_{\min }\left(Q_2\right)\right\}, \quad \beta=\max \left\{\left\|P_1\right\|_2,\left\|P_2\right\|_2\right\}
-    \end{equation}
-    选择 $\gamma<\alpha /(2 \sqrt{2} \beta)$保证在 $U$ 内有 $\dot{V}(z)>0$ 。所以原点是非稳定的。通过定义矩阵
-    \begin{equation}
-        P=T^{\mathrm{T}}\left[\begin{array}{cc}
-        P_1 & 0 \\
-        0 & -P_2
-        \end{array}\right] T ; \quad Q=T^{\mathrm{T}}\left[\begin{array}{cc}
-        Q_1 & 0 \\
-        0 & Q_2
-        \end{array}\right] T
-    \end{equation}
-    满足方程
-    \begin{equation}
-        P A+A^{\mathrm{T}} P=Q
-    \end{equation}
-    矩阵 $Q$ 是正定的，并且 $V(x)=x^{\mathrm{T}} P x$ 在任意靠近原点 $x=0$ 点上为正。
-    现在考虑 $A$ 在虚轴上可能有特征值，而且在右半开复平面内也有特征值。
-    运用平移坐标轴的简单方法，将一般情况转化为特殊情况。假设 $A$ 有 $m$ 个特征值，
-    且满足 $\operatorname{Re} \lambda_i>\delta>0$ 。那么，矩 阵 $[A-(\delta / 2) I]$ 在右半开平面内有 $m$ 个特征值，
-    但在虚轴上没有特征值。存在矩阵 $P=P^{\mathrm{T}}$ 和 $Q=Q^{\mathrm{T}}>0$，使
-    \begin{equation}
-        P\left[A-\frac{\delta}{2} I\right]+\left[A-\frac{\delta}{2} I\right]^{\mathrm{T}} P=Q
-    \end{equation}
-    其中，$V(x)=x^{\mathrm{T}} P x$ 对任意靠近原点的点都为正，则
-    \begin{equation}
-        \begin{aligned}
-        \dot{V}(x) & =x^{\mathrm{T}}\left(P A+A^{\mathrm{T}} P\right) x+2 x^{\mathrm{T}} P g(x) \\
-        & =x^{\mathrm{T}}\left[P\left(A-\frac{\delta}{2} I\right)+\left(A-\frac{\delta}{2} I\right)^{\mathrm{T}} P\right] x+\delta x^{\mathrm{T}} P x+2 x^{\mathrm{T}} P g(x) \\
-        & =x^{\mathrm{T}} Q x+\delta V(x)+2 x^{\mathrm{T}} P g(x)
-        \end{aligned}
-    \end{equation}
-    在集合$\left\{x \in R^n \mid\|x\|_2 \leqslant r\right.$ 且 $\left.V(x)>0\right\}$内，当 $\|x\|_2<r$ 时，选择 $r$ 满足 $\|g(x)\|_2 \leqslant \gamma\|x\|_2$，
-    则 $\dot{V}(x)$ 满足
-    \begin{equation}
-        \dot{V}(x) \geqslant \lambda_{\min }(Q)\|x\|_2^2-2\|P\|_2\|x\|_2\|g(x)\|_2 \geqslant\left(\lambda_{\min }(Q)-2 \gamma\|P\|_2\right)\|x\|_2^2
-    \end{equation}
-    当 $\gamma<(1 / 2) \lambda_{\text {min }}(Q) /\|P\|_2$ 时，上式为正，运用Chetaev 定理（定理2.4）即可证明。
-\end{proof}
 \subsection{混沌基本理论}
+\subsubsection{混沌定义}
+从牛顿力学创立之初，人们就坚信 Laplace 确定论思想，即对确定性动力系统 施加确定性输入，将得到确定性的输出. 这一结论对于线性系统是正确的，但对于非线性系统，
+则可能出现一种不可预测的、类随机的运动，即混沌 (chaos). 由于混沌的奇异性、复杂性尚未被彻底揭示，其定义至今尚不统一。首先来介绍Li-Yorke 定义。
+\begin{theorem}(Li-Yorke)
+    若 $f(x)$ 为 $[a, b]$ 上的连续自映射，且 $f(x)$ 有 3 周期点，则 $\forall n \in \mathbb{Z}^{+}, f(x)$ 存在 $n$ 周期点。
+\end{theorem}
+\begin{definition}(Li-Yorke)
+区间 $I$ 上的连续自映射 $f(x)$ 具有混沌现象，若其满足：\par
+(1) $f$ 的周期点的周期无上界，\par
+(2) $I$ 上存在不可数子集 $S$，有\par
+(i) 对任意 $x, y \in S, x \neq y$ 时，$\lim _{n \rightarrow \infty} \sup \left|f^n(x)-f^n(y)\right|>0$；\par
+(ii) 对任意 $x, y \in S, \lim _{n \rightarrow \infty} \inf \left|f^n(x)-f^n(y)\right|=0$；\par
+(iii) 对任意 $x \in S$ 和 $f$ 的任意周期点 $y$,有 $\lim _{n \rightarrow \infty} \sup \left|f^n(x)-f^n(y)\right|>0$。
+\end{definition}
+由定义可知：闭区间 $I$ 上的连续函数 $f (x)$，若存在 3 周期点，则必存在任意正整数周期点, 即存在混沌现象。定义中，条件 (i)、(ii) 表明子集中的点 $x$ 与 $y$ 相当分散又相当集中，
+条件 (iii) 意味着子集不会趋近于任意周期点. Li-Yorke 定义准确刻画了混沌运动的三个重要特征:
+(1) 存在不可数无穷多稳定非周期轨道；(2) 至少存在一个不稳定的非周期轨道；(3) 存在可数无穷多稳定周期轨道。\par
+接下来是下一种定义混沌的方法——Devaney 混沌定义。
+\begin{definition}(Devaney)
+设 $V$ 是一度量空间，称映射 $f: V \rightarrow V$ 为混沌的，若其满足：\par
+(1) 初值敏感性， $\exists \delta>0, \forall \varepsilon>0$ 与 $\forall x \in V, \exists y \in O_x(\varepsilon)$ 与 $n \in \mathbb{N}$， s.t. $d\left(f^n(x), f^n(y)\right)>\delta$；\par
+(2) 拓扑传递性， 对 $V$ 上任意开集 $X, Y, \exists k>0, f^k(X) \cap Y \neq \varnothing$ (如映射有稠 轨道, 则其显然是拓扑传递的)；\par
+(3) $f$ 的周期点集在 $V$ 中稠密。
+\end{definition}
+
+Devaney 定义从另外的角度刻画了混沌的重要特征， 包括:(1) 初值敏感性:任意两点 x，y 即使非常靠拢，它们之间的距离在 $f$ 作用多次
+后都将扩大到一定的程度， 任意微小的初始误差，经多次迭代后都将导致计算 $f$ 轨 道的失败;(2) 拓扑传递性:在 $f $的作用下， 任意点的邻域将遍及整个度量空间 V，
+表明$f$ 无法分解为在 $f$ 下互不相影响的两个子系统;(3) 周期点集稠密性:意味系统具有很强规律性与确定性，形似混乱实则有序。\par
+混沌的复杂运动状态为非线性动力系统所特有，但非共有，只有在适当的系统参数下才可能出现混沌运动，此外系统仍表现为通常的确定性运动。 系统进入混沌运动主要有以下三种途径：
+倍周期分岔、Hopf 分岔以及 Hamilton 系统的 KAM 环面破裂。
+
+\subsubsection{混沌的特征}
+1976 年，P.Myrberg 发表的《具有极复杂动力学的简单数学模型》对混沌理论研究起到了重要作用，文中指出了一些具有分岔、混沌等极为复杂的动力学行为的简
+单数学模型。随后 M.Feigenbaum 发现了倍周期分岔中的标度性和普适常数，即通过周期不断地加倍而产生混沌，途径为：不动点 →2 周期点 →4 周期点 → ······→ 极限点 → 奇异吸引子。
+以一维 Logistic 映射为例，展现上述过程。Logistic 映射为
+\begin{equation}
+    x_{n+1}=\mu x_n\left(1-x_n\right), \quad x_i \in[0,1], \mu \in[0,4] .
+\end{equation}
+首先求周期 1 解，即经过一次迭代后的不动点$x_{n+1}=x_n$。
+由 $x_n=\mu x_n\left(1-x_n\right)$，解得 $x_1^*=0, x_2^*=1-1 / \mu$. 因 $x_i \in[0,1]$ (由模型代表的 客观实际所决定，如某物种在自然界所占百分比)， 而当 $0 \leqslant \mu<1$ 时，$x_2^*<0$ 不符
+合。 另外稳定性要求 $\left|\partial x_{n+1} / \partial x_n\right|<1$, 令 $A=\left|\partial x_{n+1} / \partial x_n\right|=\mu\left(1-2 x_n\right)$, 则有：\par
+(1) $0 \leqslant \mu<1$ 时， 映射有一个周期 1 不动点 $x_1^*=0$, 且 $A=\left|\partial x_{n+1} / \partial x_n\right|_{x^*=0}=$ $\mu\left(1-2 x_n\right)_{x^*=0}=\mu$， 
+故其是映射在 $[0,1]$ 内稳定的周期 1 不动点。\par
+(2) $1<\mu<3$ 时，映射有两个周期 1 不动点 $x_1^*=0, x_2^*=1-1 / \mu$。又因 $A=$ $\left|\partial x_{n+1} / \partial x_n\right|_{x^*=0}=\mu>1$，
+故 $x_1^*=0$ 为不稳定不动点；$A=\left|\partial x_{n+1} / \partial x_n\right|_{x^*=1-1 / \mu}=$ $2-\mu$，
+则 $|A|=|2-\mu|<1$, 故 $x_2^*=1-1 / \mu$ 是映射的稳定不动点。\par
+(3) $3<\mu<1+\sqrt{6}$ 时，两个不动点所对应的 $|A|$ 均大于 1， 故不动点 $x_1^*, x_2^*$ 均 失稳， 此时系统无周期 1 解，只能考虑周期 2 解 (迭代两次后的不动点)。2 次迭代后的映射为
+\begin{equation}
+    x_{n+2}=\mu x_{n+1}\left(1-x_{n+1}\right)=\mu^2 x_n\left(1-x_n\right)\left[1-\mu x_n\left(1-x_n\right)\right] \text {, }
+\end{equation}
+该映射有四个不动点，其中 $x_1^*=0, x_2^*=1-1 / \mu$ 不稳定 (由上)，而不动点 
+$x_3^*=$ $[1+\mu+\sqrt{(\mu+1)(\mu+3)}] / 2, x_4^*=[1+\mu-\sqrt{(\mu+1)(\mu+3)}] / 2$ 稳定 (证明同上)， 故此时系统有两个周期 2 解。\par
+(4) 如此继续，出现四周期、八周期情形。\par
+最终当 $\mu= 3.5699$时, 迭代数列不再具有稳定的周期性，系统进入混沌状态。\par
+为观测 $\mu$ 对迭代格式 $x_{n+1}=\mu x_n\left(1-x_n\right)$ 的影响，将区间 $(0,4]$ 以步长 $\Delta \mu$ 离散化。对每个离散的 $\mu$ 值进行迭代，忽略前 50 个迭代值，
+把点 $\left(\mu, x_{51}\right),\left(\mu, x_{52}\right), \cdots$, $\left(\mu, x_{100}\right)$ 显示在坐标平面上，
+构成 Feigenbaum 图，它反映了分岔与混沌的基本特性。
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Feigenb.png}
+    \caption{Logistic 迭代的 Feigenbaum 图}
+\end{figure}
+从 Feigenbaum 图可以看出，当 $\mu \in(0,1)$ 时，0 是稳定的不动点；当 $\mu \in(1,3)$ 时，0 是排斥点，$\mu_4=(\mu-1) / \mu$ 是稳定的不动点；
+当 $\mu \in(3,3.4494897)$ 时，迭代变为 2 周期轨道，$\mu_1=3$ 是第一个分岔点；当 $\mu \in(3.4494897,3.544090)$ 时，迭代变 为 4 周期轨道，
+$\mu_2=3.4494897$ 是第二个分岔点；当 $\mu \in(3.544090,3.564407)$ 时，迭 代变为 8 周期轨道，$\mu_3=3.544090$ 是第三个分岔点；
+下面迭代将依次分叉为 16 周期、32 周期、64 周期······这种分岔形式称为倍周期分岔，相应的分岔点为
+\begin{equation*}
+   \mu_4=3.564407, \mu_5=3.568759, \mu_6=3.569692, \mu_7=3.569891, \mu_8=3.569934,
+\end{equation*}
+参数 $\mu$ 收敛到 $\mu_{\infty}$，次收玫序列可表示为
+\begin{equation}
+    \mu_n=\mu_{\infty}-c / \delta^n, \quad n \gg 1
+\end{equation}
+式中$\delta$称为 Feigenbaum 常数，
+\begin{equation}
+    \delta=4.6692016091, \quad c=2.6327, \quad \mu_{\infty}=3.5699456
+\end{equation}
+20 世纪 40 年代，andau 与 Hopf 先后独立提出了一种湍流发生的机制，其基本思想是：在雷诺数 Re 由极小逐渐增大的过程中，
+流体依次经历与时间无关的层流状态，此时对应相空间的稳定不动点；一次 Hopf 分岔，流体因频率为$\omega_1$ 的振荡出现失稳；
+二次 Hopf 分岔，出现新的频率为$\omega_2$的振荡，这种准周期运动使流体运动更加复杂；随着 Re 继续增大，
+将出现更多频率的准周期运动，最后出现极复杂 的准周期运动，即为湍流。然而，试验证明该湍流理论并不符合实际。\par
+为此，Ruelle 与 Takens 对上述湍流发生机制作出了修正，将湍流看作具有无数个频率耦合而成的振荡现象，且只需经过 4 次分岔，
+而非 Landau 和 Hopf 所认为的需经过无数次。4维环面上具有4个不可公约的频率的准周期运动通常并不稳定，经扰动后转变为奇异吸引子，
+即著名的 $T^4$ → 混沌道路。随后，代之以 $T^2$ → 混沌道路，其典型途径为:不动点 (平衡态)→ 极限环 (周期运动)→ 二维环面 (准周 期运动)→ 奇异吸引子 (混沌运动)。
+KAM 定理指出：近 Hamilton 系统的轨线分布在一些层层相套的环面 (KAM 环面)，而混沌区充满了两个环面之间。若为可积 Hamilton 系统，
+双曲平衡点与椭圆平衡点交替出现，相平面被鞍点连续分割，各部分运动互不相混；若为不可积 Hamilton 系统，鞍点连线破断，
+剧烈振荡出现在鞍点附近，这种振荡与 Smale 马蹄 结构等价，从而导致混沌运动。
+\subsubsection{研究混沌常用方法}
+考虑几个基本问题：能否判定一个系统将出现混沌；可否对混沌作定量刻画；可否在某些非线性系统因混沌而无法长期预报的同时，
+得到混沌信号中的有用信息。分析系统混沌运动常用的方法有：观测法、相空间重构法、分频采样法、Poincar ́e截 面法等等，
+以下主要介绍自功率谱密度分析与 Lyapunov 指数法。首先来看自功率谱密度分析。
+设周期信号 $x(t)$的周期为$T$，其 Fourier 级数展开形式为
+\begin{equation}
+    x(t)=\sum_{n=-\infty}^{\infty} c_n e^{j n \omega_0 t}
+\end{equation}
+式中
+\begin{equation}
+    c_n=\frac{1}{T} \int_{-T / 2}^{T / 2} x(t) e^{-j n \omega_0 t}
+\end{equation}
+其物理意义表明：任意周期运动可由基频 $\omega_0 = 2\pi /T$ 与谐振 $n\omega_0$ 叠加而成。而准周期运动也可分解为一系列频率不可约的正弦谐波地叠加，
+两者的频率谱均为离散谱。
+设 $x(t)$ 为非周期信号，若满足绝对可积条件：
+\begin{equation}
+    \int_{-\infty}^{\infty}|x(t)| \mathrm{d} t<\infty
+\end{equation}
+则其 Fourier 积分的展开式为
+\begin{equation}
+    x(t)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} X(\omega) e^{j \omega t} \mathrm{~d} \omega
+\end{equation}
+\begin{equation}
+    X(\omega)=\int_{-\infty}^{\infty} x(t) e^{-j \omega t} \mathrm{~d} t
+\end{equation}
+表明非周期信号具有连续谱。
+可通过混沌信号自相关函数 $R_{x x}(\tau)$ 的 Fourier 变换反映其频域特性，并根据所得的自功率谱密度函数 $S_{x x}(f)$ 对混沌的频域特征进行分析。
+\begin{equation}
+    \begin{aligned}
+    & S_{x x}(f)=\int_{-\infty}^{\infty} R_{x x}(\tau) e^{-j 2 \pi f \tau} \mathrm{d} \tau \\
+    & R_{x x}(\tau)=\int_{-\infty}^{\infty} S_{x x}(f) e^{-j 2 \pi f \tau} \mathrm{d} f
+    \end{aligned}
+\end{equation}
+混沌运动的功率谱为噪声背景宽峰的连续谱，其中的尖峰与周期运动相对应，反映出混沌轨道访问各混沌带的平均周期；而周期运动的功率谱中，
+尖峰只出现在基频及其倍频处；对于准周期的功率谱，尖峰在几个不可公约的基频及其频率叠加处出现；发生倍周期分岔时，
+功率谱图中的尖峰将在分频及其倍频频点上出现；由此，可判别运动的混沌、随机、周期、准周期特征。
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{LE指数}
 最大Lyapunov指数是判断非线性时间序列是否为混沌系统的重要指标，混沌运动的基本特点是运动对初始条件的扰动极为敏感，
 两个靠近的初始值所产生的轨道，随时间推移按指数方式分离，Lyapunov指数就是用以描述这一现象的量。
 在一维动力系统 $x_{n+1}=F\left(x_{n}\right)$ 中， 初始两点迭代后互相分离或者靠昽，取决于导数
@@ -605,488 +594,31 @@ $\lambda$ 与初值的选取没有关系，称为原动力系统的Lyapunov指�
 意味着系统相空间中，初始接近的两条轨线，其差别都会随着时间的演化而成指数率的增加以致达到无法预测，这就是混沌现象。
 下面给出LE指数计算方法的理论依据。\par
 设动力学系统由方程式决定: $\dot{\mathbf{X}}=F(\mathbf{X})$
-并考虑轨道相邻两点 $\mathbf{X}$ 和 $\mathbf{X}^{\prime}\left(\xi=\mathbf{X}-\mathbf{X}^{\prime}\right)$，将系统线性化得
-$$\dot{\xi}=T(\mathbf{X}(t)) \cdot \xi$$
+并考虑轨道相邻两点 $\mathbf{X}$ 和 $\mathbf{X}^{\prime}$，设$\xi=\mathbf{X}-\mathbf{X}^{\prime}$，将系统线性化得
+\begin{equation}
+    \dot{\xi}=T(\mathbf{X}(t)) \cdot \xi
+\end{equation}
 其中 $\mathbf{T}=(\partial F / \partial \mathbf{X})$ 是雅可比矩阵, $\xi$ 是切平面上的切矢量, 将上式积分有
-$$\xi(t)=\mathbf{A}^{\prime} \xi(0)$$
+\begin{equation}
+    \xi(t)=\mathbf{A}^{\prime} \xi(0)
+\end{equation}
 其中，$\mathrm{A}^{\prime}$ 是切向量 $\xi(0)$ 到 $\xi(t)$ 的线性映射算子，因此得到平均指数增长率为
-$$\lambda(\mathbf{X}(0), \xi(0))=\lim _{t \rightarrow \infty} \frac{\|\xi(t)\|}{\|\xi(0)\|}$$
+\begin{equation}
+    \lambda(\mathbf{X}(0), \xi(0))=\lim _{t \rightarrow \infty} \frac{\|\xi(t)\|}{\|\xi(0)\|}
+\end{equation}
 对于重构相空间中的某一点 $\mathbf{X}_{\mathrm{i}}$，与 $\mathbf{X}_{\mathbf{i}}$ 点距离小于 $\varepsilon$ 的所有点记为 $\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}, i=1,2, \cdots\right\}$，位移矢量为 
-$$\left\{\mathbf{Y}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\}$$
+\begin{equation}
+    \left\{\mathbf{Y}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\} 
+\end{equation}
 经过时间 $t$ 后，演化为 $\mathbf{X}_{\mathbf{i}} \rightarrow \mathbf{X}_{\mathbf{i + t}}, \mathbf{X}_{\mathbf{k}_{\mathbf{i}}} \rightarrow \mathbf{X}_{\mathbf{k}_{\mathbf{i}}+\mathbf{t}}$，因此原位移矢量 $\left\{\mathbf{Y}^{\mathrm{i}}\right\}$ 映射为
-$$\left\{\mathbf{Z}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}+\mathbf{t}}-\mathbf{X}_{\mathbf{i}+\mathbf{t}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\}$$
+\begin{equation}
+    \left\{\mathbf{Z}^{\mathbf{i}}\right\}=\left\{\mathbf{X}_{\mathbf{k}_{\mathbf{i}}+\mathbf{t}}-\mathbf{X}_{\mathbf{i}+\mathbf{t}} \mid\left\|\mathbf{X}_{\mathbf{k}_{\mathbf{i}}}-\mathbf{X}_{\mathbf{i}}\right\| \leq \varepsilon\right\}
+\end{equation}
 如果半径 $\varepsilon$ 足够小，位移矢量 $\left\{\mathbf{Y}^{\mathrm{i}}\right\}$ 和 $\left\{\mathbf{Z}^{\mathrm{i}}\right\}$ 可以近似为切平面上的切矢量，从 $\mathbf{Y}^{\mathrm{i}}$ 到 $\mathbf{Z}^{\mathbf{i}}$ 的矩阵 $\mathbf{A}_{\mathbf{j}}$ 满足
-$$\mathbf{Z}^{\mathbf{i}}=\mathbf{A}_{\mathbf{j}} \mathbf{Y}^{\mathbf{i}}$$
-
+\begin{equation}
+    \mathbf{Z}^{\mathbf{i}}=\mathbf{A}_{\mathbf{j}} \mathbf{Y}^{\mathbf{i}}
+\end{equation}
 使用最小二乘法，可以矩阵 $\mathbf{A}$, $\mathrm{QR}$ 分解矩阵 $\mathbf{A}$，在不同的时间段内进行 Gram-Schmidt正交化，即可得到所需的lyapunov指数 $\lambda_{i}, i=1,2, \cdots, d$。\par
-\section{稀疏重构基本理论和算法}
-\subsection{稀疏重构基本理论}
-该节介绍了压缩感知理论的定义以及基础数学知识，通过探寻不同的限制与不同的感应矩阵性质给出稀疏重构问题解的唯一性与存在性
-的等价条件。如若未说明，本节内容只讨论实向量空间，可拓展至复数的会单独指明。
-\subsubsection{稀疏重构问题的定义}
-假设信号$x=\left(x_i\right)^n_{i=1}\in \mathbb{R}^n$具有稀疏性质，或者在一个正交变换后具有这样的性质即
-$\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交矩阵且$c$稀疏。
-取$m\times n$的矩阵$A$，其中$m<n$。令
-\begin{equation}
-    y=Ax,y=A\Phi c
-\end{equation}
-稀疏重构问题是指在已知原向量$x$中零元素足够多的情况下从$y$与$A$中还原出$x$，矩阵$A$被称为感应矩阵。
-
-\subsubsection{最优化理论}
-在$x$本身是稀疏的条件下还原条件在优化问题中的表述为
-\begin{equation}
-    \left( P_0\right) \hspace{2cm}\min_x\Vert x\Vert_0\hspace{0.5cm} s.t.\hspace{0.5cm} y=Ax
-\end{equation}
-这个问题是NP难问题，无法在有限迭代找出最优解，但是问题
-\begin{equation}
-    \left( P_1\right) \hspace{2cm}\min_x\Vert x\Vert_1\hspace{0.5cm} s.t.\hspace{0.5cm} y=Ax
-\end{equation}
-有解，并且$l_1$的减小可以促进稀疏性，因此$l_1=l_0$何时成立是稀疏还原的一个核心问题，这取决于$x$本身
-的稀疏度与感应矩阵$A$，并且对于超大数据量的情况，最小化$l_1$的方法也无法解决问题，
-本文会介绍在这种情况下启发式算法的应用与性能。接下来给出NP困难的证明，下面定理说明了$(P_0)$问题可以在多项式时间复杂度
-内约化为集合的精确覆盖，这是一个经典的NP-hard问题。
-\begin{theorem}
-    对于任意的$\eta\ge 0$问题
-    \begin{equation}
-        \min_x\Vert x\Vert_0\hspace{0.5cm} s.t.\hspace{0.5cm} \Vert Ax-y\Vert_2\le \eta
-    \end{equation}
-    对于一般的矩阵$A=\in\mathbb{C}^{m \times N}$与向量$y\in\mathbb{C}^m$都是NP-hard的。也就是说，找不到多项式时间复杂度
-    的算法解决这一问题。
-\end{theorem}
-\begin{proof}
-    不妨设$\eta <1$，令$\left\{\mathcal{C}_i,i \in[N]\right\}$是一簇$[m]$的三元素子集，即$\mathcal{C}_i$都是
-    由$[m]$中三个元素构成的。定义向量$a_1,a_2,\ldots,a_N \in \mathbb{C}^m$
-    \begin{equation}
-        \left(a_i\right)_j= \begin{cases}1 & \text { if } j \in \mathcal{C}_i \\ 0 & \text { if } j \notin \mathcal{C}_i\end{cases}
-    \end{equation}
-    定义矩阵$A$与向量$y$
-    \begin{equation}
-        A=\left[\begin{array}{l|l|l|l}
-        a_1 & a_2 & \ldots & a_N
-        \end{array}\right],\quad y=[1,1,\ldots,1]^{\top}
-    \end{equation}
-由于$N \leq\left(\begin{array}{c}m \\ 3\end{array}\right)$，这种构造可以在多项式时间内完成，若向量$z\in \mathbb{C}^N$
-满足$\|A z-y\|_2 \leq \eta$，则对于$Az$中所有$m$个元素与1的距离都不会超过$\eta$，所以均非零且$\|A z\|_0=m$
-但是因为$a_i$有3个非零元，$A z=\sum_{j=1}^N z_j a_j$有至多$3\Vert z\Vert_0$个非零元，$\Vert Az\Vert_0\le 3\Vert z\Vert _0$。
-因此，如若满足条件$\|A z-y\|_2 \leq \eta$，向量$z$一定有$\|z\|_0 \geq m / 3$。下面将算法输出定义为$x\in \mathbb{C}^N$
-，分为两种情况讨论：\par
-1.若$\|x\|_0=m / 3$，则集合$\left\{\mathcal{C}_j,j \in \operatorname{supp}(x)\right\}$组成了$[m]$的一个精确覆盖，否则
-$A x=\sum_{j=1}^N x_j a_j$的$m$个元不可能全部非零。\par
-2.若$\|x\|_0>m / 3$，则不存在精确覆盖$\left\{\mathcal{C}_j,j \in J\right\}$，否则定义向量$z\in \mathbb{C}^N$
-\begin{equation*}
-    z_j= \begin{cases}1 & \text { if } j \in J \\ 0 & \text { if } j \notin J\end{cases}
-\end{equation*}
-有$Az=y,\Vert z\Vert_0=m/3$，矛盾。\par
-因此，$(P_0)$在多项式时间复杂度内可以约化为精确覆盖问题。
-\end{proof}
-\subsubsection{稀疏度的定义}
-本节会介绍稀疏度的定义与可压缩性的度量，并给出它们基础的性质。
-\begin{definition}
-    向量$x=\left(x_i\right)^N_{i=1}\in \mathbb{R}^N$称为有$k$阶稀疏度，如果
-    \begin{equation}
-        \Vert x\Vert_0:=\# \{i:x_i \neq 0\} \le k
-    \end{equation}
-    稀疏向量的支撑定义为其非零元素的位置
-\begin{equation}
-    \operatorname{supp}(x):=\left\{j \in[N]: x_j \neq 0\right\}
-\end{equation}
-\end{definition}
-将有$k$阶稀疏度的向量集合记为$\Sigma _k$。在一般应用场景中，$k$阶稀疏度的条件仍然苛刻，
-一般采取如下定义来说明可压缩的程度。
-\begin{definition}
-    令$1<p<\infty,r>0$，向量$x=\left(x_i\right)^N_{i=1}\in \mathbb{R}^N$称为
-    可在常数$C$和比率$r$下依$p$范数压缩，如果对于任意的$k \in {1,2,\ldots,N}$
-   \begin{equation}
-        \sigma_k(x)_p:=\min _{\tilde{x} \in \Sigma_k}\|x-\tilde{x}\|_p \leq C \cdot k^{-r}
-    \end{equation}
-    同时也称使最小值取得的$z$为$\ell_p$空间中最佳$k$项近似。
-\end{definition}
-称$x$为可压缩的若$\sigma_k(x)_p$随着$k$增大而迅速减小。下面的性质说明在$\ell_p$单位球内均是可压缩的。
-\begin{proposition}
-    $\forall q>p>0,\forall x\in \mathbb{R}^N$，有不等式
-    \begin{equation}
-        \sigma_k(x)_q \leq \frac{1}{k^{1 / p-1 / q}}\|x\|_p
-    \end{equation}
-\end{proposition}
-证明这个性质之前，引入非减重排的定义。
-\begin{definition}
-    $x$的非减重排$x^*$，是指其每个元素
-    \begin{equation}
-        x_1^* \geq x_2^* \geq \ldots \geq x_N^* \geq 0
-    \end{equation}
-    并且$ x_i^*$同样是$x$中的所有元素。
-\end{definition}
-下面给出命题的证明
-\begin{proof}
-    引入非减重排$x^*$，由下列不等式
-    \begin{equation}
-        \begin{aligned}
-        \sigma_k(x)_q^q & =\sum_{j=k+1}^N\left(x_j^*\right)^q \leq\left(x_k^*\right)^{q-p} \sum_{j=k+1}^N\left(x_j^*\right)^p \leq\left(\frac{1}{k} \sum_{j=1}^k\left(x_j^*\right)^p\right)^{\frac{q-p}{p}}\left(\sum_{j=k+1}^N\left(x_j^*\right)^p\right) \\
-        & \leq\left(\frac{1}{k}\|x\|_p^p\right)^{\frac{q-p}{p}}\|x\|_p^p=\frac{1}{k^{q / p-1}}\|x\|_p^q 
-        \end{aligned}
-        \end{equation}
-        两边取$1/p$次幂可得。
-\end{proof}
-该定理有一个加强版本,证明篇幅长故略。
-\begin{theorem}
-    $\forall q>p>0,\forall x\in \mathbb{R}^N$，有不等式
-    \begin{equation}
-        \sigma_k(x)_q \leq \frac{c_{p,q}}{k^{1 / p-1 / q}}\|x\|_p
-    \end{equation}
-    其中
-    \begin{equation}
-        c_{p,q}:=\left[\left(\frac{p}{q}\right)^{p / q}\left(1-\frac{p}{q}\right)^{1-p / q}\right]^{1 / p} \leq 1
-    \end{equation}
-\end{theorem}
-还有一种手段来说明向量的可压缩程度，如果向量中有大量的小数值元素（非零），仅有少部分重要的元素。即
-\begin{equation*}
-    \operatorname{card}\left(\left\{j \in[N]:\left|x_j\right| \geq t\right\}\right)
-\end{equation*}
-很小，其中card为集合的势。下面来讨论弱$\ell_p$空间。
-\begin{definition}
-    对于$p>0$，弱空间$w \ell_p^N$是以
-    \begin{equation}
-        \|x\|_{p,\infty}:=\inf \left\{M \geq 0: \operatorname{card}\left(\left\{j \in[N]:\left|x_j\right| \geq t\right\}\right) \leq \frac{M^p}{t^p} ,\forall t>0\right\}
-    \end{equation}
-    为准范数的向量空间。
-\end{definition}
-这个空间有一个弱化的三角不等式法则。
-\begin{proposition}
-    $x^1,\ldots,x^k \in \mathbb{R}^N,p>0$有
-    \begin{equation}
-        \left\|x^1+\cdots+x^k\right\|_{p,\infty} \leq k^{\max \{1,1 / p\}}\left(\left\|x^1\right\|_{p,\infty}+\cdots+\left\|x^k\right\|_{p,\infty}\right)
-    \end{equation}
-\end{proposition}
-下面是弱范数的另一种形式。
-\begin{proposition}
-令$x^*$是$x$的非减重排。
-    \begin{equation}
-        \|x\|_{p,\infty}=\max _{i \in[N]} k^{1 / p} x_i^*
-    \end{equation}
-\end{proposition}
-下面命题可以说明弱范数比原范数更小。
-\begin{proposition}
-    对于$p>0$与$x\in \mathbb{R}^N$，
-    \begin{equation}
-        \|x\|_{p,\infty} \leq\|x\|_p
-    \end{equation}
-\end{proposition}
-\begin{proof}
-    对于任意的$j \in [N]$，有
-    \begin{equation}
-        \|x\|_p^p=\sum_{i=1}^N\left(x_i^*\right)^p \geq \sum_{i=1}^j\left(x_i^*\right)^p \geq j\left(x_j^*\right)^p
-    \end{equation}
-    两边取$1/p$次幂可得。
-\end{proof}
-接下来运用弱范数可以给出压缩性的另一种控制了。
-\begin{theorem}
-    $\forall q>p>0,\forall x\in \mathbb{R}^N$，有不等式
-    \begin{equation}
-        \sigma_k(x)_q \leq \frac{d_{p,q}}{k^{1 / p-1 / q}}\|x\|_{p,\infty}
-    \end{equation}
-    其中
-    \begin{equation}
-        d_{p,q}:=\left(\frac{p}{q-p}\right)^{1 / q}
-    \end{equation}
-\end{theorem}
-\begin{proof}
-    不失一般性设$\|x\|_{p,\infty}\le 1$，因此$x^*_j\le 1/j^{1/p}$，有
-    \begin{equation}
-        \begin{aligned}
-        \sigma_k(x)_q^q & =\sum_{j=k+1}^N\left(x_j^*\right)^q \leq \sum_{j=k+1}^N \frac{1}{j^{q / p}} \leq \int_s^N \frac{1}{t^{q / p}} d t=-\left.\frac{1}{q / p-1} \frac{1}{t^{q / p-1}}\right|_{t=k} ^{t=N} \\
-        & \leq \frac{p}{q-p} \frac{1}{k^{q / p-1}} 
-        \end{aligned}
-        \end{equation}
-        两边取$1/p$次幂可得。
-\end{proof}
-
-\subsubsection{稀疏重构解的唯一性的条件}
-这里对0范数和1范数分别给出其等价条件。
-\begin{definition}
-    取$m\times N$的矩阵$A$，$ \operatorname{spark}(A)$是$A$的列向量线性相关的最小向量数目。
-\end{definition}
-\begin{lemma}
-    记$\mathcal{N}(A)$为矩阵$A$的零空间，则
-   \begin{equation}
-    \operatorname{spark}(A)=\min \left\{k: \mathcal{N}(A) \cap \Sigma_k \neq\{0\}\right\}
-   \end{equation}
-   并且$\operatorname{spark}(A) \in[2,m+1]$。
-\end{lemma}
-下面是0范意义$P_0$下解的唯一性的等价条件。
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
-    （i）若存在$P_0$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
-    （ii）$k<\operatorname{spark}(A)/2 $。
-\end{theorem}
-\begin{proof}
-    $(i)\Rightarrow (ii)$，采用反证法，若$(ii)$不成立，则$\exists h \in \mathcal{N}(A)
-    ,h\neq 0$，同时$\Vert h \Vert_0 \le 2k$。因此存在$x$和$\tilde{x}$满足$h=x-\tilde{x}$
-    并且$\Vert x \Vert_0 ,\Vert \tilde{x} \Vert_0 \le k$，但是$Ax=A\tilde{x}$，矛盾。\par
-    $(ii)\Rightarrow (i)$，令$x$和$\tilde{x}$是满足条件的两个解，则有$x-\tilde{x}\in \mathcal{N}(A)$
-    ，并且有$\|x-\tilde{x}\|_0 \leq 2 k<\operatorname{spark}(A)$，由引理得，$x-\tilde{x}=0$。
-\end{proof}
-现在引入一个记号$1_{\Lambda}$，其中 $\Lambda$是${1,2,\ldots,N}$的一个子集。
-\begin{equation}
-    \left(1_{\Lambda} x\right)_i=\left\{ \begin{array}{rl}
-    x_i & : i \in \Lambda,\\
-    0 & : i \notin \Lambda,
-    \end{array} \quad i=1,\ldots, n .\right .
-\end{equation}
-\begin{definition}
-    令$A$是$m\times n$阶矩阵，称$A$具有$k$阶空空间性质（NSP），如果对于$\forall h \in \mathcal{N}(A)$
-    ,$h \neq 0$且对于$\forall |\Lambda| \leq k$，均有
-    \begin{equation}
-        \left\|1_{\Lambda} h\right\|_1<\frac{1}{2}\|h\|_1
-    \end{equation}
-\end{definition}
-下面是1范意义$P_1$下解的唯一性的等价条件。
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
-    （i）若存在$P_1$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
-    （ii）矩阵$A$具有$k$阶空空间性质。
-\end{theorem}
-
-\subsubsection{稀疏重构解存在的充分性条件}
-本节内容旨在讨论稀疏重构问题中0范数与1范数的解存在条件与一致时的条件，首先是$P_0$问题。
-\begin{theorem}
-    对于任意的$N \le 2k$，存在矩阵$A\in \mathbb{R}^{m \times N}$，其中$m=2k$，使得k稀疏的条件下$P_0$有解。
-\end{theorem}
-\begin{proof}
-    取范德蒙矩阵
-    \begin{equation}
-        A=\left[\begin{array}{cccc}
-        1 & 1 & \cdots & 1 \\
-        t_1 & t_2 & \cdots & t_N \\
-        \vdots & \vdots & \cdots & \vdots \\
-        t_1^{2 k-1} & t_2^{2 k-1} & \cdots & t_N^{2 k-1}
-        \end{array}\right]
-    \end{equation}
-    令$S=\left\{j_1<\cdots<j_{2 k}\right\}$是指标集，构造方阵$A_S$，行列式为
-    \begin{equation}
-        \operatorname{det}\left(A_S\right)=\left|\begin{array}{cccc}
-        1 & 1 & \cdots & 1 \\
-        t_{j_1} & t_{j_2} & \cdots & t_{j_{2 k}} \\
-        \vdots & \vdots & \cdots & \vdots \\
-        t_{j_1}^{2 k-1} & t_{j_2}^{2 k-1} & \cdots & t_{j_{2 k}}^{2 k-1}
-        \end{array}\right|=\prod_{s<\ell}\left(t_{j_{\ell}}-t_{j_s}\right)>0
-    \end{equation}
-    根据定理2.8与矩阵$A_S$的可逆性可以得出问题$P_0$的存在唯一性的条件，$A$的解只需根据指标集$S$按位置取出即可。
-\end{proof}
-
-
-\begin{definition}
-    令$A$是$m\times N$阶矩阵，$a_i$为其第$i$个列向量，矩阵相关性指数$\mu (A)$定义为
-    \begin{equation}
-        \mu(A)=\max _{i \neq j} \frac{\left|\left\langle a_i,a_j\right\rangle\right|}{\left\|a_i\right\|_2\left\|a_j\right\|_2} .
-    \end{equation}
-\end{definition}
-显然当$A$有两列成比例时，相关性指数达到最大值1。
-\begin{lemma}
-    令$A$是$m\times N$阶矩阵，那么
-    \begin{equation}
-        \mu(A) \in\left[\sqrt{\frac{N-m}{m(N-1)}}，1\right]
-    \end{equation}
-\end{lemma}
-通过这个结果可以给出一个使0范数与1范数的一致的充分条件。
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，$x \in \mathbb{R}^N \backslash\{0\}$是$(P_0)$问题的
-    一个解，并且有
-    \begin{equation}
-        \|x\|_0<\frac{1}{2}\left(1+\mu(A)^{-1}\right) .
-    \end{equation}
-    那么$x$是$(P_0)$和$(P_1)$问题的唯一解。
-\end{theorem}
-
-\begin{definition}
-    令$A$是$m\times N$阶矩阵，称$A$具有$k$阶有限等距性质（RIP），如果$\exists \delta_k
-    \in (0,1)$，使得$\forall x \in \Sigma_k$，均有
-    \begin{equation}
-        \left(1-\delta_k\right)\|x\|_2^2 \leq\|A x\|_2^2 \leq\left(1+\delta_k\right)\|x\|_2^2
-    \end{equation}
-\end{definition}
-\begin{theorem}
-    令$A$是$m\times N$阶具有$2k$阶有限等距性质的矩阵，其中$\delta_{2 k}<\sqrt{2} -1$。
-    令$x \in \mathbb{R}^n$，$\hat{x}$是$(P_1)$的一个解，那么
-    \begin{equation}
-        \|x-\hat{x}\|_2 \leq C \cdot\left(\frac{\sigma_k(x)_1}{\sqrt{k}}\right)
-    \end{equation}
-    其中$C$是某个关于$\delta_{2 k}$的常数。
-\end{theorem}
-目前已知条件下，$\delta_{2 k}<0.473$是必要的。
-\subsubsection{稀疏重构解存在的必要性条件}
-本节内容旨在讨论稀疏重构问题中0范数与1范数的解一致时的必要条件，
-主要思路是利用凸多面体理论推导等价。先引出$n$阶实心单位多面体的定义。
-\begin{equation}
-    C^n=\left\{x \in \mathbb{R}^N:\|x\|_1 \leq 1\right\}
-\end{equation}
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，多面体$P=A C^N \subseteq \mathbb{R}^m$，下述条件等价。\par
-    （i）$P$的$k$面数与$C^N$的$k$面数相等。\par
-    （ii）$(P_0)=(P_1)$
-\end{theorem}
-\subsubsection{感应矩阵的性质}
-在介绍了稀疏度、RIP性质、相关性指数后，本节谈论他们之间的联系。
-\begin{theorem}
-    令$A$是$m\times N$阶矩阵，并且每个列向量都是归一化的。\par
-    (i)$\operatorname{spark}(A) \geq 1+\frac{1}{\mu(A)}$。\par
-    (ii)$A$满足$k$阶RIP性质，其中$\delta_k=k \mu(A),\forall  k<\mu(A)^{-1}$。\par
-    (iii)假设$A$具有$2k$阶RIP性质，其中$\delta_{2 k}<\sqrt{2} -1$，如果
-    \begin{equation}
-        \frac{\sqrt{2} \delta_{2 k}}{1-(1+\sqrt{2}) \delta_{2 k}}<\sqrt{\frac{k}{N}}
-    \end{equation}
-    则$A$有$2k$阶NSP性质。
-\end{theorem}
-下面来总结一些特殊感应矩阵的稀疏度与相关性指数。
-首先是$m\times N$阶范德蒙矩阵$A$，它的稀疏度是
-\begin{equation}
-    \operatorname{spark}(A)=m+1
-\end{equation}
-如果是由两个相互无偏正交基构成的矩阵，则其相关性指数为
-\begin{equation}
-    \mu\left(\left[\Phi_1 \mid \Phi_2\right]\right)=\frac{1}{\sqrt{m}}
-\end{equation}
-从一些已知结构生成的矩阵，如Alltop序列或格拉斯曼框架生成出的$m\times m^2$阶矩阵，则其相关性指数为
-\begin{equation}
-    \mu(A)=\frac{1}{\sqrt{m}}
-\end{equation}
-下面给出了一种生成具有RIP性质的矩阵的方法。
-\begin{lemma}
-    令$\epsilon \in \left( 0,1\right)$，$x_1,x_2,...,x_p\in \mathbb{R}^N$，并且$m=O\left(\varepsilon^2
-    \log p\right)$是一个正整数。则存在一个李普希茨映射$f:\mathbb{R}^N \rightarrow \mathbb{R}^m$，使得
-    \begin{equation}
-        (1-\varepsilon)\left\|x_i-x_j\right\|_2^2 \leq\left\|f\left(x_i\right)-f\left(x_j\right)\right\|_2^2 
-        \leq(1+\varepsilon)\left\|x_i-x_j\right\|_2^2 \quad \forall i,j \in\{1,\ldots,p\}
-    \end{equation}
-\end{lemma}
-对于$\forall x \in \mathbb{R}^N$ ，由某个概率分布产生的随机矩阵$A$对应的变换满足引理条件的概率为
-\begin{equation}
-    \mathbb{P}\left((1-\varepsilon)\|x\|_2^2 \leq\|A x\|_2^2 \leq(1+\varepsilon)\|x\|_2^2\right) \leq 1-2 e^{-c_0 \varepsilon^2 m}
-\end{equation}
-\begin{theorem}
-    令$\delta \in (0,1)$，若由某个概率分布产生的随机矩阵$A$在$\varepsilon =\delta$时满足上式中的条件，
-    那么存在两个常数$c_1,c_2$，在概率不大于$1-2 e^{-c_2 \delta^2 m}$的条件下，$A$满足$k \leq  \frac{c_1 \delta^2m}{\log (n / k)}$阶RIP性质。
-\end{theorem}
-由此可见，通过随机构建一个列数够大的矩阵，即$m>\delta^{-2} k \log (N / k)$就可以满足RIP性质的要求。
-\subsection{稀疏重构算法}
-经过上节的讨论得知，某些情况下$P_0$问题可以转换为$P_1$问题，而$P_1$是经典的基追踪问题，首先说明这种情况。
-\begin{theorem}
-    令$\mathbf{A} \in \mathbb{R}^{m \times N}$，其列向量为$\mathbf{a}_1,\ldots,\mathbf{a}_N$，假设存在唯一的解
-    $\mathbf{x}^{\sharp}$使得
-    \begin{equation}
-        \underset{\mathbf{z} \in \mathbb{R}^N}{\operatorname{minimize}}\|\mathbf{z}\|_1 \quad \text { subject to } \mathbf{A z}=\mathbf{y}
-    \end{equation}
-    则$\left\{\mathbf{a}_j,j \in \operatorname{supp}\left(\mathbf{x}^{\sharp}\right)\right\}$是线性无关的，并且
-    \begin{equation}
-        \left\|\mathbf{x}^{\sharp}\right\|_0=\operatorname{card}\left(\operatorname{supp}\left(\mathbf{x}^{\sharp}\right)\right) \leq m
-    \end{equation}
-\end{theorem}
-\begin{proof}
-    使用反证法，假设$\left\{\mathbf{a}_j，j \in S\right\}$是线性相关的，其中$S=\operatorname{supp}\left(\mathbf{x}^{\sharp}\right)$
-    ，也就是说，存在非零向量$\mathbf{v} \in \mathbb{R}^N$使得$\mathbf{A v}=\mathbf{0}$并且支撑在$S$上。对任意$t \neq 0$
-    \begin{equation}
-        \left\|\mathbf{x}^{\sharp}\right\|_1<\left\|\mathbf{x}^{\sharp}+t \mathbf{v}\right\|_1=\sum_{j \in S}\left|x_j^{\sharp}+t v_j\right|=\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}+t v_j\right)\left(x_j^{\sharp}+t v_j\right)
-    \end{equation}
-    如果$|t|<\min _{j \in S}\left|x_j^{\sharp}\right| /\|\mathbf{v}\|_{\infty}$，有
-    \begin{equation}
-        \operatorname{sgn}\left(x_j^{\sharp}+t v_j\right)=\operatorname{sgn}\left(x_j^{\sharp}\right) \quad \text { for all } j \in S
-    \end{equation}
-    因此，在这种情形下
-    \begin{equation}
-        \begin{aligned}
-        \left\|\mathbf{x}^{\sharp}\right\|_1 & <\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right)\left(x_j^{\sharp}+t v_j\right)=\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) x_j^{\sharp}+t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j \\
-        & =\left\|\mathbf{x}^{\sharp}\right\|_1+t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j .
-        \end{aligned}
-    \end{equation}
-    由于总能找到$t \neq 0$使得$t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j \leq 0$，产生矛盾。
-\end{proof}
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{bp.png}
-\end{figure}
-基追踪问题可以转换为线性规划问题。
-\begin{equation}
-    \min _{x,u} \sum_i u_i \quad \text { subject to } \begin{cases}
-    x_i-u_i  \leq 0 \\
-    -x_i-u_i  \leq 0\\
-    A x  =b
-    \end{cases}
-\end{equation}
-进而用下述算法求解。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{pda.png}
-\end{figure}
-下面是采用贪心策略的启发式算法，并不一定能收敛到最优解，首先是最经典的正交追踪。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{omp.png}
-\end{figure}
-下面的引理指出$\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}$
-确实是一个好的贪心策略。
-\begin{lemma}
-    令$\mathbf{A} \in \mathbb{C}^{m \times N}$是列归一化矩阵，给定的$S \subset[N]$，$\mathbf{v}$支撑在$S$上，并且
-    $j \in[N]$，如果
-    \begin{equation}
-        \mathbf{w}:=\underset{\mathbf{z} \in \mathbb{C}^N}{\operatorname{argmin}}\left\{\|\mathbf{y}-\mathbf{A z}\|_2,\operatorname{supp}(\mathbf{z}) \subset S \cup\{j\}\right\}
-    \end{equation}
-    那么有
-    \begin{equation}
-        \|\mathbf{y}-\mathbf{A} \mathbf{w}\|_2^2 \leq\|\mathbf{y}-\mathbf{A v}\|_2^2-\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{v})\right)_j\right|^2
-    \end{equation}
-\end{lemma}
-\begin{proof}
-任取$t \in \mathbb{C}$，形如$\mathbf{v}+t \mathbf{e}_j$的向量都支撑在$S \cup\{j\}$上，并且
-\begin{equation}
-    \|\mathbf{y}-\mathbf{A} \mathbf{w}\|_2^2 \leq \min _{t \in \mathbb{C}}\left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2
-\end{equation}
-设$t=\rho e^{i \theta}$，有
-\begin{equation}
-    \begin{aligned}
-    \left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2 & =\left\|\mathbf{y}-\mathbf{A v}-t \mathbf{A} \mathbf{e}_j\right\|_2^2 \\
-    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+|t|^2\left\|\mathbf{A} \mathbf{e}_j\right\|_2^2-2 \operatorname{Re}\left(\bar{t}\left\langle\mathbf{y}-\mathbf{A v},\mathbf{A} \mathbf{e}_j\right\rangle\right) \\
-    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \operatorname{Re}\left(\rho e^{-i \theta}\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A v})\right)_j\right) \\
-    & \geq\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \rho\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{v})\right)_j\right|
-    \end{aligned}
-\end{equation}
-最后一式在$\rho=\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{u})\right)_j\right|$时取最小，即
-\begin{equation}
-    \min _{t \in \mathbb{C}}\left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2=\|\mathbf{y}-\mathbf{A v}\|_2^2-\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{u})\right)_j\right|^2
-\end{equation}
-\end{proof}
-正交匹配追踪算法有一个问题，一旦选择了不正确的索引，它就会保留下去，在$s$次迭代内没有办法修正。下面的CoSaMP算法增加了迭代次数，
-并且采用了更有意义的索引。设$\mathbf{z} \in \mathbb{C}^N$
-\begin{equation}
-    L_s(\mathbf{z}):=s\text{个最大绝对条目的索引集}
-\end{equation}
-\begin{equation}
-    H_s(\mathbf{z}):=\mathbf{z}_{L_s(\mathbf{z})}
-\end{equation}
-其中非线性算子$H_s$称为$s$阶硬阈值运算符，它将保留绝对值最大的前$s$项，并将其他项置为0。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{cosa.png}
-\end{figure}
-通过硬阈值的引入，可以将基追踪法的选取数量放宽，转变成基阈值法。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{bt.png}
-\end{figure}
-阈值法有一个重要的性质。
-\begin{proposition}
-    向量可被阈值法还原的充要条件是
-    \begin{equation}
-        \min _{j \in S}\left|\left(\mathbf{A}^* \mathbf{y}\right)_j\right|>\max _{\ell \in \bar{S}}\left|\left(\mathbf{A}^* \mathbf{y}\right)_{\ell}\right|
-    \end{equation}
-\end{proposition}
-接下来是阈值法的两个变种。
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{iht.png}
-\end{figure}
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{htp.png}
-\end{figure}
 \section{复杂网络的同步}
 本节内容来探讨复杂网络中一个重要性质，网络中不同节点的同步性，在一些条件下，原本不协调的各个节点
 会彼此同步，首先需要一个衡量同步性的指标。考虑如下动力方程
@@ -1154,6 +686,308 @@ $H(\cdot)$ 确定的。如果耦合强度与 Laplacian 矩阵的每个非零特�
     c \lambda_k \subseteq S, \quad k=2, \ldots, N
 \end{equation}
 那么同步流形是渐近稳定的。
+\section{稀疏重构基本理论和算法}
+\subsection{稀疏重构基本理论}
+该节介绍了压缩感知理论的定义以及基础数学知识，通过探寻不同的限制与不同的感应矩阵性质给出稀疏重构问题解的唯一性与存在性
+的等价条件。如若未说明，本节内容只讨论实向量空间，可拓展至复数的会单独指明。
+\subsubsection{稀疏重构问题的定义}
+假设信号$x=\left(x_i\right)^n_{i=1}\in \mathbb{R}^n$具有稀疏性质，或者在一个正交变换后具有这样的性质即
+$\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交矩阵且$c$稀疏。
+取$m\times n$的矩阵$A$，其中$m<n$。令
+\begin{equation}
+    y=Ax,y=A\Phi c
+\end{equation}
+稀疏重构问题是指在已知原向量$x$中零元素足够多的情况下从$y$与$A$中还原出$x$，矩阵$A$被称为感应矩阵。
+
+\subsubsection{最优化理论}
+在$x$本身是稀疏的条件下还原条件在优化问题中的表述为
+\begin{equation}
+    \left( P_0\right) \hspace{2cm}\min_x\Vert x\Vert_0\hspace{0.5cm} s.t.\hspace{0.5cm} y=Ax
+\end{equation}
+这个问题是NP难问题，无法在有限迭代找出最优解，但是问题
+\begin{equation}
+    \left( P_1\right) \hspace{2cm}\min_x\Vert x\Vert_1\hspace{0.5cm} s.t.\hspace{0.5cm} y=Ax
+\end{equation}
+有解，并且$l_1$的减小可以促进稀疏性，因此$l_1=l_0$何时成立是稀疏还原的一个核心问题，这取决于$x$本身
+的稀疏度与感应矩阵$A$，并且对于超大数据量的情况，最小化$l_1$的方法也无法解决问题，
+本文会介绍在这种情况下启发式算法的应用与性能。接下来给出NP困难的证明，下面定理说明了$(P_0)$问题可以在多项式时间复杂度
+内约化为集合的精确覆盖，这是一个经典的NP-hard问题。
+\begin{theorem}
+    对于任意的$\eta\ge 0$问题
+    \begin{equation}
+        \min_x\Vert x\Vert_0\hspace{0.5cm} s.t.\hspace{0.5cm} \Vert Ax-y\Vert_2\le \eta
+    \end{equation}
+    对于一般的矩阵$A=\in\mathbb{C}^{m \times N}$与向量$y\in\mathbb{C}^m$都是NP-hard的。也就是说，找不到多项式时间复杂度
+    的算法解决这一问题。
+\end{theorem}
+
+\subsubsection{稀疏重构解的唯一性的条件}
+这里对0范数和1范数分别给出其等价条件。
+\begin{definition}
+    取$m\times N$的矩阵$A$，$ \operatorname{spark}(A)$是$A$的列向量线性相关的最小向量数目。
+\end{definition}
+\begin{lemma}
+    记$\mathcal{N}(A)$为矩阵$A$的零空间，则
+   \begin{equation}
+    \operatorname{spark}(A)=\min \left\{k: \mathcal{N}(A) \cap \Sigma_k \neq\{0\}\right\}
+   \end{equation}
+   并且$\operatorname{spark}(A) \in[2,m+1]$。
+\end{lemma}
+下面是0范意义$P_0$下解的唯一性的等价条件。
+\begin{theorem}
+    令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
+    （i）若存在$P_0$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
+    （ii）$k<\operatorname{spark}(A)/2 $。
+\end{theorem}
+\begin{proof}
+    $(i)\Rightarrow (ii)$，采用反证法，若$(ii)$不成立，则$\exists h \in \mathcal{N}(A)
+    ,h\neq 0$，同时$\Vert h \Vert_0 \le 2k$。因此存在$x$和$\tilde{x}$满足$h=x-\tilde{x}$
+    并且$\Vert x \Vert_0 ,\Vert \tilde{x} \Vert_0 \le k$，但是$Ax=A\tilde{x}$，矛盾。\par
+    $(ii)\Rightarrow (i)$，令$x$和$\tilde{x}$是满足条件的两个解，则有$x-\tilde{x}\in \mathcal{N}(A)$
+    ，并且有$\|x-\tilde{x}\|_0 \leq 2 k<\operatorname{spark}(A)$，由引理得，$x-\tilde{x}=0$。
+\end{proof}
+现在引入一个记号$1_{\Lambda}$，其中 $\Lambda$是${1,2,\ldots,N}$的一个子集。
+\begin{equation}
+    \left(1_{\Lambda} x\right)_i=\left\{ \begin{array}{rl}
+    x_i & : i \in \Lambda,\\
+    0 & : i \notin \Lambda,
+    \end{array} \quad i=1,\ldots, n .\right .
+\end{equation}
+\begin{definition}
+    令$A$是$m\times n$阶矩阵，称$A$具有$k$阶空空间性质（NSP），如果对于$\forall h \in \mathcal{N}(A)$
+    ,$h \neq 0$且对于$\forall |\Lambda| \leq k$，均有
+    \begin{equation}
+        \left\|1_{\Lambda} h\right\|_1<\frac{1}{2}\|h\|_1
+    \end{equation}
+\end{definition}
+下面是1范意义$P_1$下解的唯一性的等价条件。
+\begin{theorem}
+    令$A$是$m\times N$阶矩阵，且$k \in \mathbb{N}$，则下述2个条件等价\par
+    （i）若存在$P_1$下解使得$\Vert x \Vert_0 \le k$，则解唯一。\par
+    （ii）矩阵$A$具有$k$阶空空间性质。
+\end{theorem}
+
+\subsubsection{稀疏重构解存在的充分性条件}
+本节内容旨在分析$P_0$与$P_1$的解的一致性，首先讨论$P_0$问题的解的存在性问题。
+\begin{theorem}
+    对于任意的$N \le 2k$，存在矩阵$A\in \mathbb{R}^{m \times N}$，其中$m=2k$，使得k稀疏的条件下$P_0$有解。
+\end{theorem}
+\begin{proof}
+    取范德蒙矩阵
+    \begin{equation}
+        A=\left[\begin{array}{cccc}
+        1 & 1 & \cdots & 1 \\
+        t_1 & t_2 & \cdots & t_N \\
+        \vdots & \vdots & \cdots & \vdots \\
+        t_1^{2 k-1} & t_2^{2 k-1} & \cdots & t_N^{2 k-1}
+        \end{array}\right]
+    \end{equation}
+    令$S=\left\{j_1<\cdots<j_{2 k}\right\}$是指标集，构造方阵$A_S$，行列式为
+    \begin{equation}
+        \operatorname{det}\left(A_S\right)=\left|\begin{array}{cccc}
+        1 & 1 & \cdots & 1 \\
+        t_{j_1} & t_{j_2} & \cdots & t_{j_{2 k}} \\
+        \vdots & \vdots & \cdots & \vdots \\
+        t_{j_1}^{2 k-1} & t_{j_2}^{2 k-1} & \cdots & t_{j_{2 k}}^{2 k-1}
+        \end{array}\right|=\prod_{s<\ell}\left(t_{j_{\ell}}-t_{j_s}\right)>0
+    \end{equation}
+    根据定理2.8与矩阵$A_S$的可逆性可以得出问题$P_0$的存在唯一性的条件，$A$的解只需根据指标集$S$按位置取出即可。
+\end{proof}
+
+
+\begin{definition}
+    令$A$是$m\times N$阶矩阵，$a_i$为其第$i$个列向量，矩阵相关性指数$\mu (A)$定义为
+    \begin{equation}
+        \mu(A)=\max _{i \neq j} \frac{\left|\left\langle a_i,a_j\right\rangle\right|}{\left\|a_i\right\|_2\left\|a_j\right\|_2} .
+    \end{equation}
+\end{definition}
+显然当$A$有两列成比例时，相关性指数达到最大值1。
+\begin{lemma}
+    令$A$是$m\times N$阶矩阵，那么
+    \begin{equation}
+        \mu(A) \in\left[\sqrt{\frac{N-m}{m(N-1)}},1\right]
+    \end{equation}
+\end{lemma}
+通过这个结果可以给出一个使0范数与1范数的一致的充分条件。
+\begin{theorem}
+    令$A$是$m\times N$阶矩阵，$x \in \mathbb{R}^N \backslash\{0\}$是$(P_0)$问题的
+    一个解，并且有
+    \begin{equation}
+        \|x\|_0<\frac{1}{2}\left(1+\mu(A)^{-1}\right) .
+    \end{equation}
+    那么$x$是$(P_0)$和$(P_1)$问题的唯一解。
+\end{theorem}
+
+\begin{definition}
+    令$A$是$m\times N$阶矩阵，称$A$具有$k$阶有限等距性质（RIP），如果$\exists \delta_k
+    \in (0,1)$，使得$\forall x \in \Sigma_k$，均有
+    \begin{equation}
+        \left(1-\delta_k\right)\|x\|_2^2 \leq\|A x\|_2^2 \leq\left(1+\delta_k\right)\|x\|_2^2
+    \end{equation}
+\end{definition}
+下面的定理说明$P_1$问题的解与真实解在欧氏距离下被控制住。
+\begin{theorem}
+    令$A$是$m\times N$阶具有$2k$阶有限等距性质（RIP）的矩阵，其中$\delta_{2 k}<\sqrt{2} -1$。
+    令$x \in \mathbb{R}^n$，$\hat{x}$是$(P_1)$的一个解，那么
+    \begin{equation}
+        \|x-\hat{x}\|_2 \leq C \cdot\left(\frac{\sigma_k(x)_1}{\sqrt{k}}\right)
+    \end{equation}
+    其中$C$是某个关于$\delta_{2 k}$的常数。
+\end{theorem}
+令
+\begin{equation}
+    C^n=\left\{x \in \mathbb{R}^N:\|x\|_1 \leq 1\right\}
+\end{equation}
+\begin{theorem}
+    令$A$是$m\times N$阶矩阵，多面体$P=A C^N \subseteq \mathbb{R}^m$，下述条件等价。\par
+    （i）$P$的$k$面数与$C^N$的$k$面数相等。\par
+    （ii）$(P_0)=(P_1)$
+\end{theorem}
+如下方法说明，随机矩阵是大概率满足RIP性质的矩阵，因而稀疏度问题可以转化为更容易的形式。
+\begin{theorem}
+    令$A$是$m\times N$阶矩阵，并且每个列向量都是归一化的。\par
+    (i)$\operatorname{spark}(A) \geq 1+\frac{1}{\mu(A)}$。\par
+    (ii)$A$满足$k$阶RIP性质，其中$\delta_k=k \mu(A),\forall  k<\mu(A)^{-1}$。\par
+    (iii)假设$A$具有$2k$阶RIP性质，其中$\delta_{2 k}<\sqrt{2} -1$，如果
+    \begin{equation}
+        \frac{\sqrt{2} \delta_{2 k}}{1-(1+\sqrt{2}) \delta_{2 k}}<\sqrt{\frac{k}{N}}
+    \end{equation}
+    则$A$有$2k$阶NSP性质。
+\end{theorem}
+下面来总结一些特殊感应矩阵的稀疏度与相关性指数。
+首先是$m\times N$阶范德蒙矩阵$A$，它的稀疏度是
+\begin{equation}
+    \operatorname{spark}(A)=m+1
+\end{equation}
+如果是由两个相互无偏正交基构成的矩阵，则其相关性指数为
+\begin{equation}
+    \mu\left(\left[\Phi_1 \mid \Phi_2\right]\right)=\frac{1}{\sqrt{m}}
+\end{equation}
+从一些已知结构生成的矩阵，如Alltop序列或格拉斯曼框架生成出的$m\times m^2$阶矩阵，则其相关性指数为
+\begin{equation}
+    \mu(A)=\frac{1}{\sqrt{m}}
+\end{equation}
+\begin{lemma}
+    令$\epsilon \in \left( 0,1\right)$，$x_1,x_2,...,x_p\in \mathbb{R}^N$，并且$m=O\left(\varepsilon^2
+    \log p\right)$是一个正整数。则存在一个李普希茨映射$f:\mathbb{R}^N \rightarrow \mathbb{R}^m$，使得
+    \begin{equation}
+        (1-\varepsilon)\left\|x_i-x_j\right\|_2^2 \leq\left\|f\left(x_i\right)-f\left(x_j\right)\right\|_2^2 
+        \leq(1+\varepsilon)\left\|x_i-x_j\right\|_2^2 \quad \forall i,j \in\{1,\ldots,p\}
+    \end{equation}
+\end{lemma}
+对于$\forall x \in \mathbb{R}^N$ ，由某个概率分布产生的随机矩阵$A$对应的变换满足引理条件的概率为
+\begin{equation}
+    \mathbb{P}\left((1-\varepsilon)\|x\|_2^2 \leq\|A x\|_2^2 \leq(1+\varepsilon)\|x\|_2^2\right) \leq 1-2 e^{-c_0 \varepsilon^2 m}
+\end{equation}
+\begin{theorem}
+    令$\delta \in (0,1)$，若由某个概率分布产生的随机矩阵$A$在$\varepsilon =\delta$时满足上式中的条件，
+    那么存在两个常数$c_1,c_2$，在概率不大于$1-2 e^{-c_2 \delta^2 m}$的条件下，$A$满足$k \leq  \frac{c_1 \delta^2m}{\log (n / k)}$阶RIP性质。
+\end{theorem}
+由此可见，通过随机构建一个列数够大的矩阵，即$m>\delta^{-2} k \log (N / k)$就可以满足RIP性质的要求。
+\subsection{稀疏重构算法}
+经过上节的讨论得知，某些情况下$P_0$问题可以转换为$P_1$问题，而$P_1$是经典的基追踪问题，是可解的，首先说明这种情况，下述定理从理论上说明了
+若找的$P_1$的唯一解，则这个解的稀疏度可以得到控制。
+\begin{theorem}
+    令$\mathbf{A} \in \mathbb{R}^{m \times N}$，其列向量为$\mathbf{a}_1,\ldots,\mathbf{a}_N$，假设存在唯一的解
+    $\mathbf{x}^{\sharp}$使得
+    \begin{equation}
+        \underset{\mathbf{z} \in \mathbb{R}^N}{\operatorname{minimize}}\|\mathbf{z}\|_1 \quad \text { subject to } \mathbf{A z}=\mathbf{y}
+    \end{equation}
+    则$\left\{\mathbf{a}_j,j \in \operatorname{supp}\left(\mathbf{x}^{\sharp}\right)\right\}$是线性无关的，并且
+    \begin{equation}
+        \left\|\mathbf{x}^{\sharp}\right\|_0=\operatorname{card}\left(\operatorname{supp}\left(\mathbf{x}^{\sharp}\right)\right) \leq m
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    使用反证法，假设$\left\{\mathbf{a}_j,j \in S\right\}$是线性相关的，其中$S=\operatorname{supp}\left(\mathbf{x}^{\sharp}\right)$
+    ，也就是说，存在非零向量$\mathbf{v} \in \mathbb{R}^N$使得$\mathbf{A v}=\mathbf{0}$并且支撑在$S$上。对任意$t \neq 0$
+    \begin{equation}
+        \left\|\mathbf{x}^{\sharp}\right\|_1<\left\|\mathbf{x}^{\sharp}+t \mathbf{v}\right\|_1=\sum_{j \in S}\left|x_j^{\sharp}+t v_j\right|=\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}+t v_j\right)\left(x_j^{\sharp}+t v_j\right)
+    \end{equation}
+    如果$|t|<\min _{j \in S}\left|x_j^{\sharp}\right| /\|\mathbf{v}\|_{\infty}$，有
+    \begin{equation}
+        \operatorname{sgn}\left(x_j^{\sharp}+t v_j\right)=\operatorname{sgn}\left(x_j^{\sharp}\right) \quad \text { for all } j \in S
+    \end{equation}
+    因此，在这种情形下
+    \begin{equation}
+        \begin{aligned}
+        \left\|\mathbf{x}^{\sharp}\right\|_1 & <\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right)\left(x_j^{\sharp}+t v_j\right)=\sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) x_j^{\sharp}+t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j \\
+        & =\left\|\mathbf{x}^{\sharp}\right\|_1+t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j .
+        \end{aligned}
+    \end{equation}
+    由于总能找到$t \neq 0$使得$t \sum_{j \in S} \operatorname{sgn}\left(x_j^{\sharp}\right) v_j \leq 0$，产生矛盾。
+\end{proof}
+所以可以转化为经典的基追踪问题如下
+
+\begin{equation}
+    \mathbf{x}^{\sharp}=\operatorname{argmin}\|\mathbf{z}\|_1 \quad \text { subject to } \mathbf{A z}=\mathbf{y}
+\end{equation}
+基追踪问题可以转换为线性规划问题。
+\begin{equation}
+    \min _{x,u} \sum_i u_i \quad \text { subject to } \begin{cases}
+    x_i-u_i  \leq 0 \\
+    -x_i-u_i  \leq 0\\
+    A x  =b
+    \end{cases}
+\end{equation}
+进而用一般的线性规划算法求解即可。\par
+\subsubsection{贪心策略}
+下采用贪心策略的启发式算法，并不一定能收敛到最优解，但是对条件的适应性强，同时有令人满意的速度。首先是最经典的正交追踪，这个算法
+通过不断引入在我们期望的方向上投影最大的向量，逐步达到问题条件的同时满足构造较小的支撑集。\par
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{omp.png}
+\end{figure}
+下面的引理指出$\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}$
+确实是一个好的贪心策略，确实满足了条件在欧氏距离下的最佳逼近。
+\begin{lemma}
+    令$\mathbf{A} \in \mathbb{C}^{m \times N}$是列归一化矩阵，给定的$S \subset[N]$，$\mathbf{v}$支撑在$S$上，并且
+    $j \in[N]$，如果
+    \begin{equation}
+        \mathbf{w}:=\underset{\mathbf{z} \in \mathbb{C}^N}{\operatorname{argmin}}\left\{\|\mathbf{y}-\mathbf{A z}\|_2,\operatorname{supp}(\mathbf{z}) \subset S \cup\{j\}\right\}
+    \end{equation}
+    那么有
+    \begin{equation}
+        \|\mathbf{y}-\mathbf{A} \mathbf{w}\|_2^2 \leq\|\mathbf{y}-\mathbf{A v}\|_2^2-\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{v})\right)_j\right|^2
+    \end{equation}
+\end{lemma}
+\begin{proof}
+任取$t \in \mathbb{C}$，形如$\mathbf{v}+t \mathbf{e}_j$的向量都支撑在$S \cup\{j\}$上，并且
+\begin{equation}
+    \|\mathbf{y}-\mathbf{A} \mathbf{w}\|_2^2 \leq \min _{t \in \mathbb{C}}\left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2
+\end{equation}
+设$t=\rho e^{i \theta}$，有
+\begin{equation}
+    \begin{aligned}
+    \left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2 & =\left\|\mathbf{y}-\mathbf{A v}-t \mathbf{A} \mathbf{e}_j\right\|_2^2 \\
+    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+|t|^2\left\|\mathbf{A} \mathbf{e}_j\right\|_2^2-2 \operatorname{Re}\left(\bar{t}\left\langle\mathbf{y}-\mathbf{A v},\mathbf{A} \mathbf{e}_j\right\rangle\right) \\
+    & =\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \operatorname{Re}\left(\rho e^{-i \theta}\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A v})\right)_j\right) \\
+    & \geq\|\mathbf{y}-\mathbf{A v}\|_2^2+\rho^2-2 \rho\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{v})\right)_j\right|
+    \end{aligned}
+\end{equation}
+最后一式在$\rho=\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{u})\right)_j\right|$时取最小，即
+\begin{equation}
+    \min _{t \in \mathbb{C}}\left\|\mathbf{y}-\mathbf{A}\left(\mathbf{v}+t \mathbf{e}_j\right)\right\|_2^2=\|\mathbf{y}-\mathbf{A v}\|_2^2-\left|\left(\mathbf{A}^*(\mathbf{y}-\mathbf{A} \mathbf{u})\right)_j\right|^2
+\end{equation}
+\end{proof}
+正交匹配追踪算法有一个问题，一旦选择了不正确的索引，它就会保留下去，在$s$次迭代内没有办法修正。下面的CoSaMP算法增加了迭代次数，通过阈值的
+引入增加了每次选取的个数，采用了更有意义的索引机制来减小陷入局部解的可能性。
+设$\mathbf{z} \in \mathbb{C}^N$，令
+\begin{equation}
+    L_s(\mathbf{z}):=s\text{个最大绝对条目的索引集}
+\end{equation}
+\begin{equation}
+    H_s(\mathbf{z}):=\mathbf{z}_{L_s(\mathbf{z})}
+\end{equation}
+其中非线性算子$H_s$称为$s$阶硬阈值运算符，它将保留绝对值最大的前$s$项，并将其他项置为0。\par
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{cosa.png}
+\end{figure}
+
+
+
+
 
 
 \section{小结}
