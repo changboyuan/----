@@ -1,11 +1,6 @@
 \chapter{基础理论}
 \section{复杂网络基本概念}
-21世纪是复杂性和网络化的世纪。从20世纪七八十年代开始，在国际上形成了非线性科学和复杂性问题的研究热潮。尤其是20世纪90年代以来，
-人类已经生活在一个充满各种各样复杂网络的世界中，许多复杂性问题都可以从复杂网络的角度去研究。
-随着以互联网为代表的网络信息技术的迅速发展,人类社会已经迈入了复杂网络时代。人类的生活与生产活动越来越多地依赖于各种复杂网络系统安全可靠和有效的运行。
-作为一个跨学科的新兴领域，“网络科学与工程”已经逐步形成并获得了迅猛发展。现在，许多发达国家的科学界和工程界都将这个新兴领域提上了国家科技发展规划的议事日程。
-在中国，复杂系统包括复杂网络作为基础研究也已列入《国家中长期科学和技术发展规划纲要(2006-2020年)》。\par
-网络科学与工程重点研究自然科学技术和社会政治经济中各种复杂系统微观性态与宏观现象之间的密切联系，特别是其网络结构的形成机理与演化方式、
+复杂网络科学与工程重点研究自然科学技术和社会政治经济中各种复杂系统微观性态与宏观现象之间的密切联系，特别是其网络结构的形成机理与演化方式、
 结构模式与动态行为、运动规律与调控策略,以及多关联复杂系统在不同尺度下行为之间的相关性等。网络科学与工程融合了数学、统计物理、计算机科学及各类工程技术科学，
 探索采用复杂系统自组织演化发展的思想去建立全新的理论和方法，其中的网络拓扑学拓展了人们对复杂系统的认识，而网络动力学则更深入地刻画了复杂系统的本质。
 网络科学既是数学中经典图论和随机图论的自然延伸，也是系统科学和复杂性科学的创新发展。\par
@@ -159,7 +154,7 @@ WS小世界模型是通过在规则图上做带有随机性的更改形成的。
 其中规定不得有重边和自环。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{wsp.png}
+    \includegraphics[width=0.8\textwidth]{wsp1.png}
     \caption{WS随机网络的构造}
 \end{figure}
 可以看出，$p=0$时是完全规则的网络，$p=1$时是完全随机的网络。WS模型的聚类系数与平均路径长度是关于重连概率$p$的函数，
@@ -784,10 +779,16 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
 进而用一般的线性规划算法求解即可。\par
 另一类稀疏重构算法是采用贪心策略算法，并不一定能收敛到最优解，但是对条件的适应性强，同时有令人满意的速度。首先是最经典的正交追踪算法（OMP），这个算法
 通过不断引入在我们期望的方向上投影最大的向量，逐步达到问题条件的同时满足构造较小的支撑集。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{omp.png}
-\end{figure}
+
+现在来介绍OMP算法，我们假定初始的支撑集为$S^0$，初始输出结果为$\mathbf{x}^0$，最终的输出结果为$\mathbf{x}^{\sharp}$。
+一直重复以下过程直到达到我们需要的稀疏度$\bar{n}$，得到结果$\mathbf{x}^{\sharp}=\mathbf{x}^{\bar{n}}$。
+\begin{equation}
+    \begin{aligned}
+    & S^{n+1}=S^n \cup\left\{j_{n+1}\right\}, \quad j_{n+1}:=\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}, \\
+    & \mathbf{x}^{n+1}=\underset{\mathbf{z} \in \mathbb{C}^N}{\operatorname{argmin}}\left\{\|\mathbf{y}-\mathbf{A} \mathbf{z}\|_2, \operatorname{supp}(\mathbf{z}) \subset S^{n+1}\right\} .
+    \end{aligned}
+\end{equation}
+
 下面的引理指出上述OMP算法中采用的策略$\underset{j \in[N]}{\operatorname{argmax}}\left\{\left|\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right)_j\right|\right\}$
 确实是一个好的贪心策略，确实满足了条件在欧氏距离下的最佳逼近。
 \begin{lemma}
@@ -830,14 +831,14 @@ $\Vert x\Vert_0:=\# \{i:x_i \neq 0\}$远小于$n$或$x=\Phi c$，$\Phi$是正交
     H_s(\mathbf{z}):=\mathbf{z}_{L_s(\mathbf{z})}
 \end{equation}
 其中非线性算子$H_s$称为$s$阶硬阈值运算符，它将保留绝对值最大的前$s$项，并将其他项置为0。\par
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{cosa.png}
-\end{figure}
-
-
-
-
-
-
+以下是CoSaMP算法的迭代过程，同样在达到固定的稀疏度后停止。
+\begin{equation}
+    \begin{aligned}
+    & U^{n+1}=\operatorname{supp}\left(\mathbf{x}^n\right) \cup L_{2 s}\left(\mathbf{A}^*\left(\mathbf{y}-\mathbf{A} \mathbf{x}^n\right)\right) \\
+    & \mathbf{u}^{n+1}=\underset{\mathbf{z} \in \mathbb{C}^N}{\operatorname{argmin}}\left\{\|\mathbf{y}-\mathbf{A} \mathbf{z}\|_2, \operatorname{supp}(\mathbf{z}) \subset U^{n+1}\right\}, \\
+    & \mathbf{x}^{n+1}=H_s\left(\mathbf{u}^{n+1}\right) .
+    \end{aligned}
+\end{equation}
 \section{小结}
+本节我们首先详细介绍了复杂网络的基础内容，给出了ER随机图与小世界网络模型的构造方法，讨论了经典复杂网络模型的拓扑性质。随后介绍了非线性系统的经典问题
+，平衡点稳定性问题，并由此引出了动力系统混沌现象的产生与量化。最后给出了稀疏重构问题的定义与基本理论，并给出了两种经典的稀疏重构算法。

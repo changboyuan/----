@@ -5,23 +5,23 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces WS随机网络的聚类系数与重连概率\relax }}{11}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces NW随机网络的平均路径长度\relax }}{14}{figure.caption.13}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出时域图\relax }}{32}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出相图\relax }}{33}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing 方程随周期振幅$A$变化的分岔图\relax }}{33}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing-WS型小世界网络的连接拓扑结构图\relax }}{34}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces 分叉图演示\relax }}{36}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces $K=2$时耦合强度对混沌的影响\relax }}{38}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces $K=20$时耦合强度对混沌的影响\relax }}{38}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces $K=48$时耦合强度对混沌的影响\relax }}{39}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces $p=0$时连接度对混沌的影响\relax }}{40}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces $p=0.5$时连接度对混沌的影响\relax }}{40}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces $p=1$时连接度对混沌的影响\relax }}{41}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces 重连概率对混沌的影响\relax }}{42}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces 不同类型网络混沌的振幅范围\relax }}{44}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces 第二大特征值与重连概率的关系\relax }}{45}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces 最大特征值与重连概率的关系\relax }}{46}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出时域图\relax }}{31}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 不同周期振幅$A$取值时，Duffing 方程输出相图\relax }}{32}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Duffing 方程随周期振幅$A$变化的分岔图\relax }}{32}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Duffing-WS型小世界网络的连接拓扑结构图\relax }}{33}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 分叉图演示\relax }}{35}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces $K=2$时耦合强度对混沌的影响\relax }}{37}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces $K=20$时耦合强度对混沌的影响\relax }}{37}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces $K=48$时耦合强度对混沌的影响\relax }}{38}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces $p=0$时连接度对混沌的影响\relax }}{39}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces $p=0.5$时连接度对混沌的影响\relax }}{39}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces $p=1$时连接度对混沌的影响\relax }}{40}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces 重连概率对混沌的影响\relax }}{41}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces 不同类型网络混沌的振幅范围\relax }}{43}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces 第二大特征值与重连概率的关系\relax }}{44}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces 最大特征值与重连概率的关系\relax }}{45}{figure.caption.28}%
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces OMP和CoSaMP两种算法的去噪能力\relax }}{48}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces OMP和CoSaMP两种算法的重构误差\relax }}{49}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces OMP和CoSaMP两种算法的去噪能力\relax }}{47}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces OMP和CoSaMP两种算法的重构误差\relax }}{48}{figure.caption.30}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
