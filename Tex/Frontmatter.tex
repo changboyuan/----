@@ -16,16 +16,33 @@
 \intobmk\chapter*{摘\quad 要}% 显示在书签但不显示在目录
 \setcounter{page}{1}% 开始页码
 \pagenumbering{Roman}% 页码符号
-
-本文是中国科学院大学学位论文模板ucasthesis的使用说明文档。主要内容为介绍\LaTeX{}文档类ucasthesis的用法，以及如何使用\LaTeX{}快速高效地撰写学位论文。
-
-\keywords{中国科学院大学，学位论文，\LaTeX{}模板}% 中文关键词
+复杂网络是一种由大量节点和连接构成的网络，它们通常具有非线性、非均匀、动态、随机等特性。复杂网络的研究涉及多个领域，包括计算机科学、物理学、数学、生物学、社会学等。
+网络控制是复杂网络研究的一个重要方向，研究如何通过改变网络的节点或边的状态来影响网络的行为和性质，包括研究网络的同步、稳定性和鲁棒性等方面。\par
+本文利用Duffing方程产生混沌现象，构造大规模的WS小世界模型将不同的Duffing振子耦合连接，借此探讨复杂网络的混沌特性及其在噪声干扰下的重构方法，提出了一种新的Duffing-WS型小世界网络模型，
+通过变分法计算出最大李雅普诺夫指数表达式作为衡量网络混沌的标准，
+并分析了不同参数对网络混沌的影响。\par
+研究表明，Duffing-WS小世界网络具有比单个Duffing-方程更为复杂的混沌特性，
+网络重连概率、连接度以及耦合强度对系统混沌区域的影响也有别于传统规则网络。我们主要研究了Duffing方程中，一定振幅范围下
+产生的混沌现象。
+其中在小世界模型中(p=0.5)，合适的连接度与耦合强度在一定程度上可以控制系统的混沌行为，重联概率对混沌是否出现的指标（LE指数）影响不大，
+但是对同步性指标有影响。所有参数均对LE指数的数值有较大影响，随着重连概率的增加，LE指数有着显著的控制现象。\par
+此外，本文还对小世界网络模型的同步性进行了初步研究，研究表明复杂网络的随机性相较于完全规则的网络有助于系统更快的完成同步。
+并对混沌信号进行稀疏重构算法的适应性研究，通过对比两种常用稀疏重构方法，发现CoSaMP算法在混沌信号的稀疏重构能力极大强于OMP算法
+同时良好的降噪效果并没有因混沌信号的原因减弱。
+\par \keywords{混沌现象，复杂网络，LE指数，稀疏重构，小世界网络}% 中文关键词
 %-
 %-> 英文摘要
 %-
 \intobmk\chapter*{Abstract}% 显示在书签但不显示在目录
 
-This paper is a help documentation for the \LaTeX{} class ucasthesis, which is  a thesis template for the University of Chinese Academy of Sciences. The main content is about how to use the ucasthesis, as well as how to write thesis efficiently by using \LaTeX{}.
+Complex networks are networks consisting of a large number of nodes and connections, which typically exhibit nonlinear, non-uniform, dynamic, and random characteristics. The study of complex networks involves multiple fields, including computer science, physics, mathematics, biology, sociology, and others.
 
-\KEYWORDS{University of Chinese Academy of Sciences (UCAS), Thesis, \LaTeX{} Template}% 英文关键词
+Network control is an important direction of research in complex network studies, which investigates how to influence the behavior and properties of networks by changing the state of nodes or edges, including the study of network synchronization, stability, and robustness.
+
+This paper explores the chaotic characteristics of complex networks and their reconstruction methods under noise interference, and proposes a new Duffing-WS small-world network model. 
+The study shows that the Duffing-WS small-world network has more complex chaotic characteristics than a single Duffing equation, and the impact of network rewiring probability, connectivity, and coupling strength on the chaotic region of the system is different from that of traditional regular networks. Appropriate connectivity and coupling strength can control the chaotic behavior of the system to some extent, and the rewiring probability has little impact on the indicator of chaos (LE exponent) but has an effect on the indicator of synchronization.
+
+In addition, this paper also conducts a preliminary study on the synchronization of small-world network models, which shows that the randomness of complex networks compared to completely regular networks helps the system to synchronize faster. The adaptability of the sparse reconstruction algorithm for chaotic signals is also studied, and by comparing two commonly used sparse reconstruction methods, it is found that the CoSaMP algorithm has much stronger ability than the OMP algorithm in the sparse reconstruction of chaotic signals, and its good denoising effect is not weakened due to the chaotic nature of the signal.
+
+\KEYWORDS{chaos,complex network, LE exponent, sparse reconstruction,small world}% 英文关键词
 %---------------------------------------------------------------------------%
