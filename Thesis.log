@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  20 MAR 2023 09:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.8.23)  21 MAR 2023 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1512,35 +1512,16 @@ File: Img//k20.png Graphic file (type bmp)
  [37]
 File: Img//k48.png Graphic file (type bmp)
 <Img//k48.png>
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 206.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 206.
-
 File: Img//pa.png Graphic file (type bmp)
 <Img//pa.png>
-[38]
 File: Img//pb.png Graphic file (type bmp)
 <Img//pb.png>
- [39]
+ [38] [39]
 File: Img//pc.png Graphic file (type bmp)
 <Img//pc.png>
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 234.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 234.
-
 File: Img//34.png Graphic file (type bmp)
 <Img//34.png>
-[40] [41]
+ [40] [41]
 Overfull \hbox (42.97676pt too wide) in paragraph at lines 281--284
 \TU/SongtiSC(0)/m/n/12.045 不 妨 假 设 \TU/entextsf/m/n/12.045 Laplacian \TU/SongtiSC(0)/m/n/12.045 矩 阵 可 对 角 化 \TU/entextsf/m/n/12.045 (\TU/SongtiSC(0)/m/n/12.045 即 为 无 向 图 情 况\TU/entextsf/m/n/12.045 )), $[][] [] [][][][][] [] [] [] []$,
  []
@@ -1563,7 +1544,7 @@ File: Img//42.png Graphic file (type bmp)
  [47]
 File: Img//43.png Graphic file (type bmp)
 <Img//43.png>
-) (./Tex/C_jielun.tex [48] [49]
+ [48]) (./Tex/C_jielun.tex [49]
 第5章
 )) [50
 
@@ -1576,12 +1557,12 @@ No file Thesis.bbl.
 
 ]) (./Thesis.aux)
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 285A9DF43546067796980A0D9411384F;5647.
+(rerunfilecheck)             Checksum: ECF64F361C814783B879B979989463BD;5178.
  ) 
 Here is how much of TeX's memory you used:
  38886 strings out of 475856
  809787 string characters out of 5801792
- 1220665 words of memory out of 5000000
+ 1220169 words of memory out of 5000000
  59233 multiletter control sequences out of 15000+600000
  480499 words of font info for 157 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

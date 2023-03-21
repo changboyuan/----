@@ -1,4 +1,4 @@
-\chapter{小世界复杂网络的混沌、同步动力学}
+\chapter{Duffing-WS型小世界复杂网络的混沌、同步动力学}
 本章针对一种新型的Duffing-WS型小世界网络，首先利用变分法推导其最大李雅普诺夫指数表达式，并以李雅普诺夫指数作为混沌现象的判断标准研究该复杂网络的混沌现象，
 同时讨论了网络混沌现象对网络各个参数的依赖关系，接着分析了振子间的同步特性。
 研究表明，Duffing-WS型小世界网络具有比单个Duffing-方程更为复杂的混沌特性。
@@ -26,7 +26,7 @@ Duffing 方程作为研究最为充分的混沌连续动力系统模型之一，
 \right.
 \end{equation}
 
-当周期振幅为0时，通过令方程组(*)右式为0可得Holmes型 Duffing 方程（*）具有三个平衡点：$S=(0,0),F_1=\left(\sqrt{\frac{a}{b}},0\right),F_2=\left(-\sqrt{\frac{a}{b}},0\right)$。
+当周期振幅为0时，通过令方程组(3.3)右式为0可得Holmes型 Duffing 方程（3.2）具有三个平衡点：$S=(0,0),F_1=\left(\sqrt{\frac{a}{b}},0\right),F_2=\left(-\sqrt{\frac{a}{b}},0\right)$。
 其中$F_1,F_2$是稳定的焦点，而$S$是不稳定的鞍点。
 
 此外，它的相空间体积为：
@@ -35,10 +35,10 @@ div V = \frac{\partial y}{\partial x}+\frac{\partial(a x-b x^{3}-\gamma y)}{\par
 \end{equation}
 所以上述Duffing系统是一个耗散动力系统。
 
-当外加周期驱动力不存在(即$A=0$)时，受迫的Holmes型 Duffing方程(*)
+当外加周期驱动力不存在(即$A=0$)时，受迫的Holmes型 Duffing方程
 退化为无摄动的Duffing方程，方程的解$x\left(t\right)$将以螺旋形式(衰减振荡)趋于两稳定焦点之一，并且初始条件决定着系统将最终趋于哪一焦点。
 在其他参数固定的条件下，周期驱动力的幅值A从0开始逐渐增加到1时，方程的解会经历同宿轨道、分岔、混沌和大尺度周期等各个状态。
-图 *给出了当$A$取不同值时 Duffing 方程输出响应的时域图，图*则给出了其输出的相图，展示了Duffing 振子从吸引子状态，再通过倍周期分岔走向混沌的过程。
+图3.1给出了当$A$取不同值时 Duffing 方程输出响应的时域图，图3.2则给出了其输出的相图，展示了Duffing 振子从吸引子状态，再通过倍周期分岔走向混沌的过程。
  \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{duffingtime.png}
@@ -156,9 +156,9 @@ z_i=\Omega t,\left. z_i\right|_{t=0}=0
 \end{equation}
 在下面的章节中，我们利用上式计算不同参数情况下的Duffing- WS型小世界网络平均最大LE指数关于周期幅度变化的曲线，
 其中LE指数大于0的区域被视为系统处于混沌运动的区域。网络的粒子个数固定为$N=100$，每条曲线均是对50个样本轨道平均后所得。
-Duffing方程中的参数固定为$a=1,b=1,\gamma=0.5,\Omega=1$。此外，本文Duffing- WS型小世界网络(*)及其对于变分方程组(*)
-的数值模拟均基于我们在第*节给出的微分方程四阶龙格库塔算法。
-\subsection{耦合强度对混沌的影响}
+Duffing方程中的参数固定为$a=1,b=1,\gamma=0.5,\Omega=1$。此外，本文Duffing- WS型小世界网络及其对于变分方程组
+的数值模拟均基于我们给出的微分方程四阶龙格库塔算法。
+\subsubsection{耦合强度对混沌的影响}
 图(a)-(c)给出了不同的耦合强度 $\varepsilon$ 下平均最大 LE 指数随幅度 $A$ 变化的曲线, 重连概率均为 $p=0.5$ 。
 在图(a)中 $K=2$, 当耦合强度 $\varepsilon$ 较小时 (如 $\varepsilon=0,0.2,0.4)$, 随着 $\varepsilon$ 的增大,
 LE 指数大于 0 的混沌区域扩大; 当耦合强度 $\varepsilon$ 较大时 (如 $\varepsilon=$ $0.6,0.8,1,2)$, 
@@ -174,7 +174,7 @@ $\varepsilon$ 具有鲁棒性。同样, 在图(c)中 $K=48$, 可以看到, 随�
 $K$ 较大时 $\varepsilon$ 的增强对混沌区域影响不明显。\par
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.48\textwidth]{k2.png}
+    \includegraphics[width=0.6\textwidth,height=0.5\textwidth]{k2.png}
     \caption{$K=2$时耦合强度对混沌的影响}
 \end{figure}
 在图(a)中 $K=2$, 当耦合强度 $\varepsilon$ 较小时 (如 $\varepsilon=0,0.2,0.4)$, 随着 $\varepsilon$ 的增大,
@@ -203,7 +203,7 @@ $\varepsilon$ 具有鲁棒性。\par
 $K$ 较大时 $\varepsilon$ 的增强对混沌区域影响不明显。
 
 
-\subsection{重连度$K$对混沌的影响}
+\subsubsection{重连度$K$对混沌的影响}
 我们接着分析重连度$K$对Duffing- WS型小世界网络混沌现象的影响。图(a)-(c)给出了不同的重连度 $K$ 下平均 LE 指数随幅度 $A$ 变化的曲线, 耦合强度均为 $\varepsilon=0.5$ 。\par
 \begin{figure}[!htbp]
     \centering
@@ -231,7 +231,7 @@ LE 指数在各个振幅处的值都最高, 可见 重连度 $K$ 较低时更容
 在图 (c)中 $p=1$, 此时网络为完全的随机网络。可以看出, $K$ 足够大时 LE 曲线的一致性会被打破,
 重连度对混沌区域的控制不再呈现明显的规律。当 $K=2$ 时混沌区域反而最小, 而中间大小的重连度 $(K=4,6,8,10)$ 混沌区域却最大。
 同时, 对比完全规则网络 $(p=0)$ 与小世界网络 $(p=0.5)$, 完全随机网络的混 沌区域更大且 LE 指数更低。
-\subsection{重连概率$p$对混沌的影响}
+\subsubsection{重连概率$p$对混沌的影响}
 最后我们分析重连概率$p$对Duffing- WS型小世界网络混沌现象的影响。图(a)-(c)给出了不同的重连概率
  $p$ 下平均LE指数随幅度 $A$ 变化的曲线, 耦 合强度均为 $\varepsilon=0.5$。
 图(a)-(c)给出了不同的重连概率 $p$ 下平均LE指数随幅度 $A$ 变化的曲线, 耦 合强度均为 $\varepsilon=0.5$ 。
@@ -321,7 +321,7 @@ L E(\alpha)=\lim _{T \rightarrow+\infty}
 \end{figure}
 分析图(*)，我们可以得出如下结论：
 
-(1)当 $A \in[0,0.32] \cup[0.83,1]$ 时, 主稳定方程的最大 $\mathrm{LE}$ 指数全为负数, 即我们考虑的Duffing-WS小世界网络(*)的同步化区域为全区域 $S R=(0,+\infty)$,
+(1)当 $A \in[0,0.32] \cup[0.83,1]$ 时, 主稳定方程的最大 $\mathrm{LE}$ 指数全为负数, 即我们考虑的Duffing-WS小世界网络的同步化区域为全区域 $S R=(0,+\infty)$,
 这时候的系统总是可以达到完全同步 (和耦合网络结构小世界特性无关);\par
 
 (2)当 $A \in[0.33,0.37]$ 时, 网络属于类型$\mathrm{III}$的网络, 其同步化区域为不连通的多区域 $S R=\left(0, \alpha_1\right) \cup\left(\alpha_2,+\infty\right)$,
@@ -369,4 +369,5 @@ $\lambda_2$ 的大小可以作为衡量网络同步化能力的指标, $\lambda_
 重连概率和耦合强度等参数对其混沌运动状态参数范围的影响。研究表明，Duffing-WS小世界网络的各
 个粒子输出也呈现出小尺度周期运动、倍周期分岔、混沌和大尺度周期运动等多种状态，
 其混沌的参数范围较单个Duffing方程更为复杂。网络重连度，重连概率和耦合强度等参数对其混
-沌区域的影响也较传统规则网络有明显不同。
+沌区域的影响也较传统规则网络有明显不同。同时我们发现，一定程度的随机性会极大促进系统的同步，同时这种促进作用在重连概率大于0.5时不再明显，
+这表明复杂网络比规则网络更容易同步。
